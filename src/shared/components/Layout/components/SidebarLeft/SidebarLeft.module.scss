@@ -8,19 +8,27 @@
     height: 100vh;
     width: 28rem;
     background-color: $Gray-950;
+    display: flex;
+    flex-direction: column;
 }
 
 .logo {
     padding: 2.8rem 7.1rem 2.8rem 2.4rem;
-    border-bottom: 0.1rem solid rgba(255, 255, 255, 0.04)
+    border-bottom: 0.1rem solid rgba(255, 255, 255, 0.04);
+    cursor: pointer;
 }
 
 .menu {
     width: 100%;
     padding: 2.4rem 1.2rem;
-    flex: 1;
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
+}
+
+.menuNavigate {
+    flex-grow: 1;
+    overflow-y: auto;
 }
 
 .elementMenu {
@@ -35,6 +43,22 @@
         font: 400 #{$font-size-m-2}/#{$line-height-m-1} $font-family;
         color: $White-000;
     }
+
+    &Servises {
+        padding: 1.2rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+
+        >div {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 1.2rem;
+        }
+    }
 }
 
 .active {
@@ -42,4 +66,44 @@
     background: $Gray-900;
     width: 100%;
     border-radius: 1.2rem;
+}
+
+.arrow {
+    transition: transform 0.3s ease;
+}
+
+.arrow.open {
+    transform: rotate(180deg);
+}
+
+.userInfo {
+    display: flex;
+    flex-direction: row;
+    gap: 1.2rem;
+    align-items: center;
+    padding: 1.2rem;
+
+    >img {
+        width: 4.8rem;
+        height: 4.8rem;
+    }
+
+    &Name {
+        font: 400 #{$font-size-m-2}/#{$line-height-m-1} $font-family;
+        color: $White-000
+    }
+
+    &Email {
+        color: $Gray-300;
+        font: 500 #{$font-size-s-1}/#{$line-height-s-1} $font-family;
+    }
+}
+
+.elementServices {
+    display: flex;
+    flex-direction: row;
+    gap: 1.2rem;
+    padding: 0.4rem 1.2rem 0.4rem 1.2rem;
+    font: 400 #{$font-size-m-1}/#{$line-height-m-1} $font-family;
+    color: $Gray-300;
 }

@@ -1,20 +1,29 @@
 import { memo, useCallback, useState } from 'react';
 import Logo from '../../../../../static/images/Logo.svg';
+import Avatar from '../../../../../static/images/Avatar.png';
+import SiderbarLeftMenu, {
+  SiderbarLeftServises,
+} from 'shared/constants/SiderbarLeftMenu';
+import { NavLink, useNavigate } from 'react-router-dom';
+import cn from 'classnames';
+import Icons from 'shared/components/Icons/Icons';
 
 import s from './SidebarLeft.module.scss';
-import SiderbarLeftMenu from 'shared/constants/SiderbarLeftMenu';
-import Icons from './components/Icons';
-import { NavLink } from 'react-router-dom';
-import cn from 'classnames';
 
 const SidebarLeft = memo(() => {
+  const navigate = useNavigate();
+
   const [openServ, setOpenServ] = useState<boolean>(false);
 
   const habdleOpenServ = useCallback(() => setOpenServ((prev) => !prev), []);
 
+  const handleGoMain = useCallback(() => {
+    navigate('/');
+  }, [navigate]);
+
   return (
     <aside className={s.sidebarLeft}>
-      <div className={s.logo}>
+      <div className={s.logo} onClick={handleGoMain} role="presentation">
         <img src={Logo} aria-label="Логотип" />
       </div>
       <div className={s.menu}>
@@ -41,18 +50,49 @@ const SidebarLeft = memo(() => {
               return (
                 <div
                   role="presentation"
-                  className={s.elementMenu}
+                  className={s.elementMenuServises}
                   key={el.icon}
                   onClick={habdleOpenServ}
                 >
-                  <Icons name={el.icon} />
-                  <span className={s.elementMenuText}>{el.text}</span>
+                  <div>
+                    <Icons name={el.icon} />
+                    <span className={s.elementMenuText}>{el.text}</span>
+                  </div>
+                  <div className={cn(s.arrow, { [s.open]: openServ })}>
+                    <Icons name={'Arrow'} />
+                  </div>
                 </div>
               );
             }
             return null;
           })}
-          {openServ && <div>Сервисы</div>}
+          {openServ && (
+            <div>
+              {SiderbarLeftServises.map((el) => (
+                <NavLink
+                  to={el.path}
+                  className={({ isActive }) =>
+                    cn(s.elementServices, { [s.active]: isActive })
+                  }
+                  key={el.text}
+                >
+                  {({ isActive }) => (
+                    <>
+                      <Icons name={el.icon} isActive={isActive}></Icons>
+                      <div className={s.elementServicesText}>{el.text}</div>
+                    </>
+                  )}
+                </NavLink>
+              ))}
+            </div>
+          )}
+        </div>
+        <div className={s.userInfo}>
+          <img src={Avatar} aria-label="Аватар"></img>
+          <div>
+            <div className={s.userInfoName}>Владислав</div>
+            <div className={s.userInfoEmail}>example@lrstudio.ru</div>
+          </div>
         </div>
       </div>
     </aside>
