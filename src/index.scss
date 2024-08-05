@@ -1,0 +1,42 @@
+@import './styles/variables.scss';
+
+* {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root,
+.page {
+  height: 100%;
+
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: $font-family;
+}
+
+h1,
+h2,
+h3,
+h4,
+h6 {
+  font-family: $font-family;
+}
+
+a {
+  text-decoration: none;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
