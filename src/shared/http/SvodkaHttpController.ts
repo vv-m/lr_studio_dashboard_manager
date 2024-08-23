@@ -52,14 +52,15 @@ const useSvodkaHttpController = () => {
       }
       if (filter === 'not_shipped') {
         return mockDealsNotShipped;
-      } else {
+      }
+      if (filter === 'all') {
         return {
           rows: [...mockDealsNotShipped.rows, ...mockDealsNotPaid.rows],
           total_sum: mockDealsNotPaid.total_sum + mockDealsNotShipped.total_sum,
-          total: 100,
+          total: 30,
           page: 1,
           per_page: 10,
-          total_pages: 10,
+          total_pages: 30,
         };
       }
     } catch (error) {

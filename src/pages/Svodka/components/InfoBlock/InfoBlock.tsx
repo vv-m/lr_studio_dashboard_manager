@@ -34,8 +34,6 @@ const InfoBlock: FC<IInfoBlock> = memo(
     const progress = useMemo(() => (done / goal) * 100, [done, goal]);
     const [iconPosition, setIconPosition] = useState({ top: 0, left: 0 });
 
-    console.log(levelNext, bonusLevel);
-
     const progressBarRef = React.useRef<HTMLDivElement>(null);
 
     const a = 100 - progress;

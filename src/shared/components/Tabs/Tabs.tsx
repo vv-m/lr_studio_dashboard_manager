@@ -16,14 +16,16 @@ const Tabs: FC<ITabs> = ({ onChange, isCheckedTab, typeTabs }) => (
       {Object.entries(typeTabs).map(([key, dep]) => (
         <li
           key={key}
-          className={cn(s.navTabsItem, { [s.navTabsItemActive]: isCheckedTab === key })}
+          className={cn(s.navTabsItem, {
+            [s.navTabsItemActive]: isCheckedTab === dep.route,
+          })}
         >
           <label htmlFor={key} className={s.label}>
             <input
               id={key}
               onChange={onChange}
               checked={isCheckedTab === key}
-              value={key}
+              value={dep.route}
               className={s.navTabsInput}
               type="radio"
             />

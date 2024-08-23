@@ -6,8 +6,6 @@ import SidebarLeft from './components/SidebarLeft';
 import s from './Layout.module.scss';
 
 const Layout: FC = memo(() => {
-  console.log('Это Лайоут');
-
   return (
     <section className={s.layout}>
       <SidebarLeft />

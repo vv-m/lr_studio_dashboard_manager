@@ -33,6 +33,17 @@ const useSvodka = () => {
     })();
   }, [getLoadDataDepartment, getLoadDataManager]);
 
+  useEffect(() => {
+    (async () => {
+      setIsLoading(true);
+      const dataDeals = await getLoadDeals({ idManager: +id, filter: typeFilter });
+      if (dataDeals) {
+        setDataDeals(dataDeals);
+      }
+      setIsLoading(false);
+    })();
+  }, [getLoadDeals, typeFilter]);
+
   return { dataManager, isLoading, dataDepartment, dataDeals, setTypeFilter, typeFilter };
 };
 

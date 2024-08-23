@@ -9,8 +9,6 @@ const getHeaderTitle = (chapter: string | undefined) => {
 
   const currentServises = SiderbarLeftServises.find((el) => el.path === chapter);
 
-  console.log(currentDepartment);
-
   if (currentDepartment) {
     return currentDepartment.text;
   }
