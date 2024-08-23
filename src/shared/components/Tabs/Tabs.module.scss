@@ -1,0 +1,56 @@
+@use 'src/styles/colors.scss'as *;
+@use 'src/styles/variables.scss'as *;
+
+.navTabs {
+    border-bottom: 0.1rem solid $Gray-100;
+    padding-left: 2.4rem;
+    display: flex;
+    align-items: center;
+    height: 7.2rem;
+    width: 100%
+}
+
+.navTabsList {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+
+}
+
+.navTabsItem {
+    display: flex;
+    align-items: center;
+    margin-right: 2rem;
+    transition: 0.3s;
+    height: 7.3rem;
+    border-bottom: 0.3rem solid transparent;
+    cursor: pointer;
+    color: $Gray-400;
+    font : 600 #{$font-size-m-2}/#{$line-height-m-1} $font-family;
+}
+
+.label {
+    cursor: pointer;
+}
+
+.navTabsItemActive {
+    color: $Gray-950;
+    font : 600 #{$font-size-m-2}/#{$line-height-m-1} $font-family;
+    border-color: $Red-500;
+    transition: 0.3s;
+
+}
+
+.navTabsItem:last-child {
+    margin-right: 0;
+}
+
+.navTabsInput {
+    position: absolute;
+    width: 0.1rem;
+    height: 0.1rem;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    outline: none;
+}

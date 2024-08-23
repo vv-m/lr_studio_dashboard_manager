@@ -1,0 +1,8 @@
+@use 'src/styles/colors.scss'as *;
+@use 'src/styles/variables.scss'as *;
+
+.table {
+    border-radius: 1.2rem;
+    background: $White-000;
+    height: 300px;
+}

@@ -1,6 +1,6 @@
 # Сервис для администраторов компании LR-Studio
 
-Стек frontend части: React + TS + Redux
+Стек frontend части: React + TS
 
 Локально запускается на http://localhost:5137/
 
