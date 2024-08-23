@@ -49,7 +49,7 @@ const TableDeals: FC<ITableDeals> = memo(({ dataDeals, setTypeFilter, typeFilter
           aria-label="Сменить тип сортировки"
         >
           <span>Сумма</span>
-          <Icons name={typeSort ? 'SortDown' : 'SortUp'}></Icons>
+          <Icons name={typeSort ? 'SortUp' : 'SortDown'}></Icons>
         </div>
       </div>
       <div className={s.tableHeader}>
