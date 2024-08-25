@@ -32,7 +32,7 @@ const Result: FC<IResult> = memo(({ setFlagCalculation, result, isDisabled }) =>
               <span>40-60 дней</span>
             </div>
           </div>
-          <div className={s.value}>{result.train || '-'}</div>
+          <div className={s.value}>{result.train ? `${result.train} ₽` : '-'}</div>
         </div>
         <div className={s.oneResult}>
           <div className={s.leftBlock}>
@@ -44,7 +44,7 @@ const Result: FC<IResult> = memo(({ setFlagCalculation, result, isDisabled }) =>
               <span>20-40 дней</span>
             </div>
           </div>
-          <div className={s.value}>{result.avto || '-'}</div>
+          <div className={s.value}>{result.avto ? `${result.avto} ₽` : '-'}</div>
         </div>
         <div className={s.oneResult}>
           <div className={s.leftBlock}>
@@ -56,7 +56,7 @@ const Result: FC<IResult> = memo(({ setFlagCalculation, result, isDisabled }) =>
               <span>42-17 дней</span>
             </div>
           </div>
-          <div className={s.value}>{result.avia || '-'}</div>
+          <div className={s.value}>{result.avia ? `${result.avia} ₽` : '-'}</div>
         </div>
       </div>
       <div>

@@ -3,8 +3,6 @@ import SiderbarLeftMenu, {
 } from 'shared/constants/SiderbarLeftMenu';
 
 const getHeaderTitle = (chapter: string | undefined) => {
-  console.log(chapter);
-
   if (!chapter) return 'Сводка';
 
   const currentDepartment = SiderbarLeftMenu.find((el) => el.path === chapter);
