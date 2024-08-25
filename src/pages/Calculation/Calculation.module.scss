@@ -1,0 +1,25 @@
+@use 'src/styles/colors.scss'as *;
+@use 'src/styles/variables.scss'as *;
+
+.main {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.calculator,
+.result {
+    display: flex;
+    flex-direction: column;
+    background-color: $White-000;
+    padding: 2.4rem;
+    border-radius: 1.2rem;
+}
+
+.calculator {
+    flex: 3;
+}
+
+.result {
+    flex: 1;
+}
