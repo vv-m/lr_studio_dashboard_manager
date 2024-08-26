@@ -1,6 +1,20 @@
 @font-face {
     font-family: 'Inter';
     font-style: normal;
-    font-weight: 100;
-    src: url('../static/fonts/Inter.woff2') format('woff2');
+    font-weight: 400;
+    src: url('src/static/fonts/Inter-400.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    src: url('src/static/fonts/Inter-600.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    src: url('src/static/fonts/Inter-700.ttf') format('truetype');
 }

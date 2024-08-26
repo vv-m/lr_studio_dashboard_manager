@@ -1,13 +1,23 @@
-import SiderbarLeftMenu from 'shared/constants/SiderbarLeftMenu';
+import SiderbarLeftMenu, {
+  SiderbarLeftServises,
+} from 'shared/constants/SiderbarLeftMenu';
 
 const getHeaderTitle = (chapter: string | undefined) => {
   if (!chapter) return 'Сводка';
 
   const currentDepartment = SiderbarLeftMenu.find((el) => el.path === chapter);
 
-  if (!currentDepartment?.path) return '';
+  const currentServises = SiderbarLeftServises.find((el) => el.path === chapter);
 
-  return currentDepartment.text;
+  if (currentDepartment) {
+    return currentDepartment.text;
+  }
+
+  if (currentServises) {
+    return currentServises.text;
+  }
+
+  return '';
 };
 
 export default getHeaderTitle;

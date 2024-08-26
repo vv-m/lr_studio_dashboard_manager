@@ -1,0 +1,74 @@
+@use 'src/styles/colors.scss'as *;
+@use 'src/styles/variables.scss'as *;
+
+.titleBlock {
+    display: flex;
+    flex-direction: row;
+    gap: 0.8rem;
+    color: $Gray-950;
+    font : 600 #{$font-size-m-2}/#{$line-height-m-1} $font-family;
+}
+
+.calls {
+    display: flex;
+    flex-direction: column;
+    padding: 2.4rem;
+    border-radius: 1.2rem;
+    background: $White-000;
+    gap: 2.4rem;
+}
+
+.callsAll {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+
+    &Time {
+        color: $Gray-950;
+        font : 700 #{$font-size-l-2}/#{$line-height-l-2} $font-family;
+    }
+
+    &Descrip {
+        color: $Gray-500;
+        font : 400 #{$font-size-m-1}/#{$line-height-m-1} $font-family;
+    }
+}
+
+.typesCalls {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem
+}
+
+.typeCall {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &Name {
+        display: flex;
+        align-items: center;
+        gap: 1.2rem;
+        color: $Gray-950;
+        font: 400 #{$font-size-m-2}/#{$line-height-m-1} $font-family;
+        flex-grow: 1;
+
+        &::after {
+            content: '';
+            flex-grow: 1;
+            margin-top: 1rem;
+            border-bottom: 1px dashed $Gray-200;
+            margin-left: 1rem;
+            margin-right: 1rem;
+        }
+    }
+}
+
+.meaning {
+    color: $Gray-950;
+    font : 600 #{$font-size-m-2}/#{$line-height-m-1} $font-family;
+
+    &Red {
+        color: $Red-500;
+    }
+}

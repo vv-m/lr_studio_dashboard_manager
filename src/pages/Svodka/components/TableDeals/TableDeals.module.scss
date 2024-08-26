@@ -1,0 +1,121 @@
+@use 'src/styles/colors.scss'as *;
+@use 'src/styles/variables.scss'as *;
+
+.table {
+
+    &Sort {
+        height: 7.2rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        border-bottom: 0.1rem solid $Gray-100;
+        background: $White-000;
+        border-radius: 1.2rem 1.2rem 0 0;
+    }
+
+    &SortSumma {
+        cursor: pointer;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 0.8rem;
+        margin-right: 2.4rem;
+        font : 400 #{$font-size-m-2}/#{$line-height-m-1} $font-family;
+    }
+
+    &Header {
+        display: flex;
+        flex-direction: row;
+        padding: 2.4rem;
+        font : 400 #{$font-size-m-2}/#{$line-height-m-1} $font-family;
+        color: $Gray-500;
+        background: $White-000;
+    }
+}
+
+.small {
+    flex: 1;
+    text-align: right;
+}
+
+.medium {
+    flex: 1.5
+}
+
+.big {
+    flex: 2;
+}
+
+.list {
+    margin-bottom: 2.4rem;
+    border-radius: 0 0 1.2rem 1.2rem !important;
+
+
+    &Item {
+        display: flex;
+        flex-direction: row;
+        padding: 1.2rem 2.4rem;
+        background: $White-000;
+
+        &:last-child {
+            border-radius: 0 0 1.2rem 1.2rem;
+        }
+    }
+}
+
+.grayBackground {
+    background: $Gray-050;
+}
+
+.summ {
+    font : 600 #{$font-size-m-2}/#{$line-height-m-1} $font-family;
+    color: $Gray-950;
+}
+
+.zero {
+    font : 400 #{$font-size-m-2}/#{$line-height-m-1} $font-family;
+    color: $Gray-500;
+}
+
+.zeroNO {
+    font : 400 #{$font-size-m-2}/#{$line-height-m-1} $font-family;
+    color: $Gray-950;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.button {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    padding: 1.2rem 2.4rem;
+    border-radius: 1.2rem;
+    background-color: $Gray-100;
+    border: 0.1rem solid $Gray-200;
+    font : 400 #{$font-size-m-2}/#{$line-height-m-1} $font-family;
+    color: $Gray-950;
+
+    &:active {
+        background-color: $Gray-200;
+
+    }
+}
+
+.total {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 2rem;
+    font : 400 #{$font-size-m-2}/#{$line-height-m-1} $font-family;
+    color: $Gray-400;
+
+    &Sum {
+        font : 600 #{$font-size-l-1}/#{$line-height-l-1} $font-family;
+        color: $Gray-950;
+    }
+}
