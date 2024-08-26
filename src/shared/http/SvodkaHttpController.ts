@@ -1,8 +1,10 @@
 import axios from 'axios';
 import { useCallback } from 'react';
 import mockSvodka, {
+  mockCalls,
   mockDealsNotPaid,
   mockDealsNotShipped,
+  mockDialogues,
   mockSvodkaDepartment,
 } from 'static/mock/mockSvodka';
 
@@ -68,7 +70,42 @@ const useSvodkaHttpController = () => {
     }
   }, []);
 
-  return { getLoadDataManager, getLoadDataDepartment, getLoadDeals };
+  const getLoadDataDialogues = useCallback(
+    async ({ idManager }: { idManager: number }) => {
+      try {
+        // Пример запроса
+        // const token = localStorage.getItem('token');
+        // const { data } = await axios.get('/api/v1/statistic/messeges', {
+        //   headers: { Authorization: `Bearer ${token}` },
+        // });
+        return mockDialogues;
+      } catch (error) {
+        console.error(error);
+      }
+    },
+    [],
+  );
+
+  const getLoadDataCalls = useCallback(async ({ idManager }: { idManager: number }) => {
+    try {
+      // Пример запроса
+      // const token = localStorage.getItem('token');
+      // const { data } = await axios.get('/api/v1/statistic/calls_short', {
+      //   headers: { Authorization: `Bearer ${token}` },
+      // });
+      return mockCalls;
+    } catch (error) {
+      console.error(error);
+    }
+  }, []);
+
+  return {
+    getLoadDataManager,
+    getLoadDataDepartment,
+    getLoadDeals,
+    getLoadDataDialogues,
+    getLoadDataCalls,
+  };
 };
 
 export default useSvodkaHttpController;

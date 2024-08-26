@@ -256,4 +256,19 @@ export const mockDealsNotShipped = {
   total_pages: 10,
 };
 
+export const mockDialogues = {
+  total: 150,
+  missed_first_responses: 25,
+  missed_follow_up_responses: 40,
+  unanswered: 10,
+};
+
+export const mockCalls = {
+  total: 245,
+  duration: '20:40:00',
+  missed: 2,
+  outgoing: 197,
+  incoming: 46,
+};
+
 export default mockSvodka;

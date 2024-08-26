@@ -41,4 +41,19 @@ export type TSvodkaDeals = {
   total_pages: number;
 };
 
+export interface IDialogues {
+  total: number;
+  missed_first_responses: number;
+  missed_follow_up_responses: number;
+  unanswered: number;
+}
+
+export interface ICalls {
+  total: number;
+  duration: string;
+  missed: number;
+  outgoing: number;
+  incoming: number;
+}
+
 export default TSvodkaManager;

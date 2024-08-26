@@ -5,15 +5,22 @@ import Icons from 'shared/components/Icons/Icons';
 import cn from 'classnames';
 import money from 'static/images/money.png';
 import { SemiCircleProgress } from 'react-semicircle-progressbar';
-
-import s from './Svodka.module.scss';
 import Calls from './components/Calls/Calls';
 import Messengers from './components/Messengers/Messengers';
 import TableDeals from './components/TableDeals/TableDeals';
 
+import s from './Svodka.module.scss';
+
 const Svodka = memo(() => {
-  const { dataManager, dataDepartment, dataDeals, setTypeFilter, typeFilter } =
-    useSvodka();
+  const {
+    dataManager,
+    dataDepartment,
+    dataDeals,
+    setTypeFilter,
+    typeFilter,
+    dataDialogues,
+    dataCalls,
+  } = useSvodka();
 
   const svgRef = useRef<HTMLDivElement>(null);
 
@@ -189,8 +196,8 @@ const Svodka = memo(() => {
               />
             </div>
           </div>
-          <Calls />
-          <Messengers />
+          <Calls dataCalls={dataCalls} />
+          <Messengers dataDialogues={dataDialogues} />
         </div>
       </div>
     </div>

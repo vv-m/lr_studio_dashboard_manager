@@ -2,7 +2,7 @@ import React, { FC, memo, useCallback } from 'react';
 import { IResults } from 'pages/Calculation/Calculation.model';
 import train from 'static/images/train.png';
 import avia from 'static/images/avia.png';
-import car from 'static/images/car.png';
+import avto from 'static/images/avto.png';
 import cn from 'classnames';
 
 import s from './Result.module.scss';
@@ -37,7 +37,7 @@ const Result: FC<IResult> = memo(({ setFlagCalculation, result, isDisabled }) =>
         <div className={s.oneResult}>
           <div className={s.leftBlock}>
             <div className={s.icon}>
-              <img src={car} alt="Авто"></img>
+              <img src={avto} alt="Авто"></img>
             </div>
             <div className={s.description}>
               <span>Авто</span>
