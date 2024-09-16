@@ -1,6 +1,7 @@
 import Calculation from 'pages/Calculation';
 import Calls from 'pages/Calls';
-import Svodka from 'pages/Svodka';
+import Statistics from 'pages/Statistics/Statistics';
+
 import { Route, Routes } from 'react-router-dom';
 import Layout from 'shared/components/Layout/Layout';
 import ProtectedRoutes from 'shared/components/ProtectedRoutes';
@@ -17,7 +18,7 @@ function App() {
             </ProtectedRoutes>
           }
         >
-          <Route index element={<Svodka />} />
+          <Route index element={<Statistics />} />
           <Route path=":chapter" element={<Calls />} />
           <Route path="/calculation" element={<Calculation />} />
         </Route>

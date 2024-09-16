@@ -1,6 +1,6 @@
 import React, { FC, memo } from 'react';
 import Icons from 'shared/components/Icons/Icons';
-import { IDialogues } from 'pages/Svodka/Svodka.model';
+import { IDialogues } from 'pages/Statistics/Statistics.model';
 
 import s from './Messengers.module.scss';
 
@@ -14,7 +14,6 @@ const Messengers: FC<IMessengers> = memo(({ dataDialogues }) => {
       <div className={s.messengers}>
         <div className={s.titleBlock}>
           <span>Мессенджеры</span>
-          <Icons name="Info" />
         </div>
         <div className={s.messengersAll}>
           <span className={s.messengersAllTime}>{dataDialogues?.total}</span>

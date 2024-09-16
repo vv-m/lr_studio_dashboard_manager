@@ -1,4 +1,4 @@
-type TSvodkaManager = {
+type TStatisticsManager = {
   qty_deals: number;
   target_qty_deals: number;
   compaired_parcent_qty_deals: number;
@@ -11,7 +11,7 @@ type TSvodkaManager = {
   conversion_rate: number;
 };
 
-export type TSvodkaDepartment = {
+export type TStatisticsDepartment = {
   qty_deals: number;
   target_qty_deals: number;
   compared_percent_qty_deals: number;
@@ -26,7 +26,7 @@ export type TSvodkaDepartment = {
   next_percent_bonus_level: number;
 };
 
-export type TSvodkaDeals = {
+export type TStatisticsDeals = {
   rows: {
     id: string;
     counterparty_name: string;
@@ -56,4 +56,4 @@ export interface ICalls {
   incoming: number;
 }
 
-export default TSvodkaManager;
+export default TStatisticsManager;

@@ -1,5 +1,4 @@
 import { memo, useEffect, useRef } from 'react';
-import useSvodka from './hooks/useSvodka';
 import InfoBlock from './components/InfoBlock/InfoBlock';
 import Icons from 'shared/components/Icons/Icons';
 import cn from 'classnames';
@@ -9,9 +8,10 @@ import Calls from './components/Calls/Calls';
 import Messengers from './components/Messengers/Messengers';
 import TableDeals from './components/TableDeals/TableDeals';
 
-import s from './Svodka.module.scss';
+import s from './Statistics.module.scss';
+import useStatistics from './hooks/useStatistics';
 
-const Svodka = memo(() => {
+const Statistics = memo(() => {
   const {
     dataManager,
     dataDepartment,
@@ -20,7 +20,7 @@ const Svodka = memo(() => {
     typeFilter,
     dataDialogues,
     dataCalls,
-  } = useSvodka();
+  } = useStatistics();
 
   const svgRef = useRef<HTMLDivElement>(null);
 
@@ -34,7 +34,7 @@ const Svodka = memo(() => {
       const svgElement = svgRef.current.querySelector('svg');
       const textElement = svgRef.current.querySelector('text');
       if (svgElement) {
-        svgElement.setAttribute('viewBox', '0 0 90 70');
+        svgElement.setAttribute('viewBox', '0 0 100 70');
         textElement?.setAttribute('x', '50');
         textElement?.setAttribute('y', '60');
         const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
@@ -177,7 +177,9 @@ const Svodka = memo(() => {
           />
         </div>
         <div className={s.effectiveness}>
-          <div className={s.title}>Личная эффективность</div>
+          <div className={s.title} style={{ marginBottom: '-1.2rem' }}>
+            Личная эффективность
+          </div>
           <div className={s.conversionRate}>
             <div className={s.titleBlock}>
               <span>Конверсия</span>
@@ -187,8 +189,8 @@ const Svodka = memo(() => {
               <SemiCircleProgress
                 percentage={dataManager?.conversion_rate || 0}
                 size={{
-                  width: 290,
-                  height: 164,
+                  width: 260,
+                  height: 179,
                 }}
                 strokeWidth={10}
                 hasBackground
@@ -204,4 +206,4 @@ const Svodka = memo(() => {
   );
 });
 
-export default Svodka;
+export default Statistics;

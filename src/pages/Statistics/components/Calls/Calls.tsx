@@ -3,7 +3,7 @@ import Icons from 'shared/components/Icons/Icons';
 import cn from 'classnames';
 
 import s from './Calls.module.scss';
-import { ICalls } from 'pages/Svodka/Svodka.model';
+import { ICalls } from 'pages/Statistics/Statistics.model';
 
 interface ICall {
   dataCalls: ICalls | null;
@@ -13,8 +13,7 @@ const Calls: FC<ICall> = memo(({ dataCalls }) => {
   return (
     <div className={s.calls}>
       <div className={s.titleBlock}>
-        <span>Звоники</span>
-        <Icons name="Info" />
+        <span>Звонки</span>
       </div>
       <div className={s.callsAll}>
         <span className={s.callsAllTime}>{dataCalls?.total}</span>

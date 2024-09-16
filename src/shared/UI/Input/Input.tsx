@@ -24,6 +24,32 @@ const Input: FC<IInput> = memo(({ label, typeValue, onChange, value, idInput }) 
     onChange(e);
   }, []);
 
+  const handleKeyDown = useCallback((e: React.KeyboardEvent<HTMLInputElement>) => {
+    const allowedKeys = [
+      '0',
+      '1',
+      '2',
+      '3',
+      '4',
+      '5',
+      '6',
+      '7',
+      '8',
+      '9',
+      ',',
+      'Backspace',
+      'ArrowLeft',
+      'ArrowRight',
+      'Tab',
+    ];
+    if ((e.ctrlKey || e.metaKey) && e.key === 'a') {
+      return;
+    }
+    if (!allowedKeys.includes(e.key)) {
+      e.preventDefault();
+    }
+  }, []);
+
   return (
     <div className={s.main}>
       {label && <label className={s.label}>{label}</label>}
@@ -36,6 +62,7 @@ const Input: FC<IInput> = memo(({ label, typeValue, onChange, value, idInput }) 
         placeholder="0"
         value={value}
         onChange={hadlerChangeInputText}
+        onKeyDown={handleKeyDown}
       ></input>
       {typeValue && <span className={s.typeValue}>{typeValue}</span>}
     </div>

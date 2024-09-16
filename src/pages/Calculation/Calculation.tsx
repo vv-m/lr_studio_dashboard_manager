@@ -1,9 +1,9 @@
 import React, { memo, useState } from 'react';
 import Calculator from './components/Calculator/Calculator';
 import Result from './components/Result/Result';
+import DEFAULT_RESULT, { IResults } from './Calculation.model';
 
 import s from './Calculation.module.scss';
-import DEFAULT_RESULT, { IResults } from './Calculation.model';
 
 const Calculation = memo(() => {
   const [flagCalculation, setFlagCalculation] = useState<boolean>(false);

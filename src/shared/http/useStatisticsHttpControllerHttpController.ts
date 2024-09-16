@@ -1,12 +1,6 @@
 import axios from 'axios';
 import { useCallback } from 'react';
-import mockSvodka, {
-  mockCalls,
-  mockDealsNotPaid,
-  mockDealsNotShipped,
-  mockDialogues,
-  mockSvodkaDepartment,
-} from 'static/mock/mockSvodka';
+import mockStatistics, { mockCalls, mockDealsNotPaid, mockDealsNotShipped, mockDialogues, mockStatisticsDepartment } from 'static/mock/mockSvodka';
 
 interface IGetLoadDeals {
   filter: 'all' | 'not_shipped' | 'not_paid';
@@ -15,7 +9,7 @@ interface IGetLoadDeals {
   perPage?: number;
 }
 
-const useSvodkaHttpController = () => {
+const useStatisticsHttpController = () => {
   const getLoadDataManager = useCallback(async () => {
     try {
       // Пример запроса
@@ -23,7 +17,7 @@ const useSvodkaHttpController = () => {
       // const { data } = await axios.get('/api/v1/statistic/manager', {
       //   headers: { Authorization: `Bearer ${token}` },
       // });
-      return mockSvodka;
+      return mockStatistics;
     } catch (error) {
       console.error(error);
     }
@@ -36,7 +30,7 @@ const useSvodkaHttpController = () => {
       // const { data } = await axios.get('/api/v1/statistic/sale_department', {
       //   headers: { Authorization: `Bearer ${token}` },
       // });
-      return mockSvodkaDepartment;
+      return mockStatisticsDepartment;
     } catch (error) {
       console.error(error);
     }
@@ -108,4 +102,4 @@ const useSvodkaHttpController = () => {
   };
 };
 
-export default useSvodkaHttpController;
+export default useStatisticsHttpController;

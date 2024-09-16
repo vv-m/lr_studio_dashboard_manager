@@ -34,30 +34,39 @@ const Calculator: FC<ICalculator> = memo(
 
     const [dataFrom, setDataForm] = useState<IFormData>(defaultFormData);
 
+    const resetResults = useCallback(() => {
+      setResult({ avia: '', avto: '', train: '' });
+    }, [setResult]);
+
     const handlerChangeLength = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
       setDataForm((prev) => ({ ...prev, length: e.target.value }));
+      resetResults();
     }, []);
 
     const handlerChangeWidth = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
       setDataForm((prev) => ({ ...prev, width: e.target.value }));
+      resetResults();
     }, []);
 
     const handlerChangeHeight = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
       setDataForm((prev) => ({ ...prev, height: e.target.value }));
+      resetResults();
     }, []);
 
     const handlerChangeWeight = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
       setDataForm((prev) => ({ ...prev, weight: e.target.value }));
+      resetResults();
     }, []);
 
     const handlerChangePrice = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
       setDataForm((prev) => ({ ...prev, price: e.target.value }));
+      resetResults();
     }, []);
 
-    const handleCurrencyChange = useCallback(
-      (currency: string) => setDataForm((prev) => ({ ...prev, currency: currency })),
-      [],
-    );
+    const handleCurrencyChange = useCallback((currency: string) => {
+      setDataForm((prev) => ({ ...prev, currency: currency }));
+      resetResults();
+    }, []);
 
     const handlerReset = useCallback(() => {
       setDataForm(defaultFormData);
@@ -105,7 +114,7 @@ const Calculator: FC<ICalculator> = memo(
         if (Number(dataFrom.weight) > 50) {
           aviaResult = 'Вес превышен (до 50кг)';
         } else {
-          aviaResult = Math.round(coastAir).toLocaleString('ru-RU');
+          aviaResult = `${Math.round(coastAir).toLocaleString('ru-RU')} ₽`;
         }
 
         setResult({
@@ -134,6 +143,8 @@ const Calculator: FC<ICalculator> = memo(
             label="Ширина"
             typeValue="см"
           />
+        </div>
+        <div className={s.inputs}>
           <Input
             onChange={handlerChangeHeight}
             value={dataFrom.height}
@@ -147,7 +158,9 @@ const Calculator: FC<ICalculator> = memo(
             typeValue="кг"
           />
         </div>
-        <div className={s.title}>Стоимость</div>
+        <div className={s.title} style={{ marginTop: '2rem' }}>
+          Стоимость
+        </div>
         <div className={s.price}>
           <Input
             onChange={handlerChangePrice}

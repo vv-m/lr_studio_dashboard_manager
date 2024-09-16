@@ -6,26 +6,27 @@
     flex-direction: row;
     gap: 0.8rem;
     color: $Gray-950;
-    font : 600 #{$font-size-m-2}/#{$line-height-m-1} $font-family;
+    padding: 0.2rem 0;
+    font : 600 #{$font-size-m-1}/#{$line-height-m-1} $font-family;
 }
 
-.calls {
+.messengers {
     display: flex;
     flex-direction: column;
-    padding: 2.4rem;
+    padding: 2rem;
     border-radius: 1.2rem;
     background: $White-000;
-    gap: 2.4rem;
+    gap: 2rem;
 }
 
-.callsAll {
+.messengersAll {
     display: flex;
     flex-direction: column;
     gap: 0.8rem;
 
     &Time {
         color: $Gray-950;
-        font : 700 #{$font-size-l-2}/#{$line-height-l-2} $font-family;
+        font : 700 #{$font-size-l-1}/#{$line-height-l-1} $font-family;
     }
 
     &Descrip {
@@ -34,23 +35,24 @@
     }
 }
 
-.typesCalls {
+.typesMessengers {
     display: flex;
     flex-direction: column;
     gap: 1.2rem
 }
 
-.typeCall {
+.typeMessenger {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0.2rem 0;
 
     &Name {
         display: flex;
         align-items: center;
         gap: 1.2rem;
         color: $Gray-950;
-        font: 400 #{$font-size-m-2}/#{$line-height-m-1} $font-family;
+        font: 400 #{$font-size-m-1}/#{$line-height-m-1} $font-family;
         flex-grow: 1;
 
         &::after {
@@ -66,9 +68,7 @@
 
 .meaning {
     color: $Gray-950;
-    font : 600 #{$font-size-m-2}/#{$line-height-m-1} $font-family;
+    font : 400 #{$font-size-m-1}/#{$line-height-m-1} $font-family;
 
-    &Red {
-        color: $Red-500;
-    }
+
 }

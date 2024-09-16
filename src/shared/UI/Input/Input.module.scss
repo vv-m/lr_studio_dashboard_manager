@@ -18,8 +18,8 @@
     padding: 1.2rem;
     border: 0.1rem solid $Gray-200;
     border-radius: 1.2rem;
-    font : 400 #{$font-size-m-2}/#{$line-height-m-1} $font-family;
-    color: $Gray-400;
+    font : 400 #{$font-size-m-1}/#{$line-height-m-1} $font-family;
+    color: $Gray-900;
 
     &::-webkit-inner-spin-button,
     &::-webkit-outer-spin-button {
@@ -39,6 +39,6 @@
     position: absolute;
     right: 1.2rem;
     top: 55%;
-    font : 400 #{$font-size-m-2}/#{$line-height-m-1} $font-family;
+    font : 400 #{$font-size-m-1}/#{$line-height-m-1} $font-family;
     color: $Gray-950;
 }

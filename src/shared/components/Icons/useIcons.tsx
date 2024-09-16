@@ -54,7 +54,7 @@ const useIcons = ({ isActive }: IUseIcons): Record<string, JSX.Element> => {
         />
       </svg>
     ),
-    Svodka: (
+    Statistics: (
       <svg
         width="24"
         height="24"
@@ -219,8 +219,8 @@ const useIcons = ({ isActive }: IUseIcons): Record<string, JSX.Element> => {
     ),
     SortUp: (
       <svg
-        width="24"
-        height="24"
+        width="20"
+        height="20"
         viewBox="0 0 24 24"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -233,9 +233,9 @@ const useIcons = ({ isActive }: IUseIcons): Record<string, JSX.Element> => {
     ),
     SortDown: (
       <svg
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
+        width="20"
+        height="20"
+        viewBox="0 0 20 24"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >

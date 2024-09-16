@@ -4,24 +4,24 @@
 .main {
     display: flex;
     flex-direction: column;
-    gap: 4rem
+    gap: 3.2rem
 }
 
 .title {
-    font: 600 #{$font-size-m-3}/#{$line-height-m-2} $font-family;
+    font: 600 #{$font-size-m-3}/#{$line-height-m-3} $font-family;
     color: $Gray-950;
 }
 
 .infoBlock {
     display: flex;
     flex-direction: column;
-    gap: 2.4rem
+    gap: 2rem
 }
 
 .blocks {
     display: flex;
     flex-direction: row;
-    gap: 2.4rem;
+    gap: 3.2rem;
 
     &>div {
         flex: 1;
@@ -30,11 +30,11 @@
 
 .prize {
     background: linear-gradient(90deg, $Malachite-200, $Malachite-500);
-    padding: 2.4rem;
+    padding: 2rem;
     border-radius: 1.2rem;
     display: flex;
     flex-direction: column;
-    gap: 2.4rem;
+    gap: 2rem;
     position: relative;
     overflow: hidden;
 }
@@ -43,7 +43,7 @@
     display: flex;
     align-items: center;
     gap: 0.8rem;
-    font: 600 #{$font-size-m-3}/#{$line-height-m-2} $font-family;
+    font: 600 #{$font-size-m-1}/#{$line-height-m-1} $font-family;
     color: $Gray-950;
 }
 
@@ -59,11 +59,13 @@
 }
 
 .statusFall {
+    z-index: 1;
     background: $Red-050;
     color: $Red-600;
 }
 
 .statusHeight {
+    z-index: 1;
     background: $Malachite-050;
     color: $Malachite-600;
 }
@@ -75,10 +77,11 @@
 }
 
 .mediumBlock {
-    font: 700 #{$font-size-l-2}/#{$line-height-l-2} $font-family;
+    font: 700 #{$font-size-l-1}/#{$line-height-l-1} $font-family;
 }
 
 .bottomBlock {
+    margin-top: 1rem;
     font: 400 #{$font-size-m-1}/#{$line-height-m-1} $font-family;
     color: $Malachite-800
 }
@@ -95,7 +98,7 @@
 .dealsBlock {
     display: flex;
     flex-direction: row;
-    gap: 2.4rem;
+    gap: 3.2rem;
 
 
 
@@ -103,15 +106,14 @@
         display: flex;
         flex-direction: column;
         flex: 2.05;
-        gap: 2.4rem;
+        gap: 2rem;
     }
 
     .effectiveness {
         display: flex;
         flex-direction: column;
-        padding-left: 3;
         flex: 1;
-        gap: 2.4rem;
+        gap: 3.2rem;
     }
 
 }
@@ -119,7 +121,7 @@
 .conversionRate {
     display: flex;
     flex-direction: column;
-    padding: 2.4rem;
+    padding: 2rem;
     border-radius: 1.2rem;
     background: $White-000;
 }
@@ -129,7 +131,7 @@
     flex-direction: row;
     gap: 0.8rem;
     color: $Gray-950;
-    font : 600 #{$font-size-m-2}/#{$line-height-m-1} $font-family;
+    font : 600 #{$font-size-m-1}/#{$line-height-m-1} $font-family;
 }
 
 .circleProgress {

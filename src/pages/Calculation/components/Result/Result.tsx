@@ -56,7 +56,7 @@ const Result: FC<IResult> = memo(({ setFlagCalculation, result, isDisabled }) =>
               <span>42-17 дней</span>
             </div>
           </div>
-          <div className={s.value}>{result.avia ? `${result.avia} ₽` : '-'}</div>
+          <div className={s.value}>{result.avia ? `${result.avia}` : '-'}</div>
         </div>
       </div>
       <div>
