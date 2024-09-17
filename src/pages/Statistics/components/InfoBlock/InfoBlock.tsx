@@ -54,7 +54,7 @@ const InfoBlock: FC<IInfoBlock> = memo(
           <div className={s.name}>
             <span>{title}</span>
             {bonusLevel && <span>{bonusLevel}</span>}
-            {levelNext && <span className={s.totalLevel}> / {levelNext}</span>}
+            {levelNext && <span className={s.totalLevel}>{' '}/ {levelNext}</span>}
             <Icons name="Info" />
           </div>
           {!levelNext && (

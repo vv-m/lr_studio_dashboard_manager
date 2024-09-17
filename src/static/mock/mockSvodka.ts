@@ -1,4 +1,4 @@
-const mockSvodka = {
+const mockStatistics = {
   qty_deals: 11,
   target_qty_deals: 20,
   compaired_parcent_qty_deals: 23,
@@ -11,7 +11,7 @@ const mockSvodka = {
   conversion_rate: 10,
 };
 
-export const mockSvodkaDepartment = {
+export const mockStatisticsDepartment = {
   qty_deals: 50,
   target_qty_deals: 120,
   compared_percent_qty_deals: 23,
@@ -271,4 +271,4 @@ export const mockCalls = {
   incoming: 46,
 };
 
-export default mockSvodka;
+export default mockStatistics;

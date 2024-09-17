@@ -1,4 +1,4 @@
-import { TSvodkaDeals } from 'pages/Svodka/Svodka.model';
+import { TStatisticsDeals } from 'pages/Statistics/Statistics.model';
 import React, { FC, memo, useCallback, useMemo, useState } from 'react';
 import tabsDealsWarning from 'shared/constants/TabsDealsWarnig';
 import Tabs from 'shared/components/Tabs/Tabs';
@@ -8,7 +8,7 @@ import cn from 'classnames';
 import s from './TableDeals.module.scss';
 
 interface ITableDeals {
-  dataDeals: TSvodkaDeals | null;
+  dataDeals: TStatisticsDeals | null;
   setTypeFilter: React.Dispatch<React.SetStateAction<'all' | 'not_shipped' | 'not_paid'>>;
   typeFilter: 'all' | 'not_shipped' | 'not_paid';
 }

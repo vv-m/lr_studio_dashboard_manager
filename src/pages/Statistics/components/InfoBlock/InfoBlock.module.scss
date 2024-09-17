@@ -4,11 +4,11 @@
 
 .blockWrapper {
     background: $White-000;
-    padding: 2.4rem;
+    padding: 2rem;
     border-radius: 1.2rem;
     display: flex;
     flex-direction: column;
-    gap: 2.4rem;
+    gap: 2rem;
 }
 
 .upperBlock {
@@ -21,7 +21,7 @@
     display: flex;
     align-items: center;
     gap: 0.8rem;
-    font: 600 #{$font-size-m-3}/#{$line-height-m-2} $font-family;
+    font: 600 #{$font-size-m-1}/#{$line-height-m-1} $font-family;
     color: $Gray-950;
 }
 
@@ -51,20 +51,20 @@
     gap: 0.4rem;
 
     &Done {
-        font: 700 #{$font-size-l-2}/#{$line-height-l-2} $font-family;
+        font: 700 #{$font-size-l-1}/#{$line-height-l-1} $font-family;
         color: $Gray-950;
     }
 
     &DoneNo {
-        padding: 0.4rem 0 0.8rem 0;
-        font: 600 #{$font-size-m-3}/#{$line-height-m-2} $font-family;
+        padding: 0.1rem 0 0.8rem 0;
+        font: 600 #{$font-size-m-2}/#{$line-height-m-2} $font-family;
         color: $Gray-500;
     }
 
     &Descrip {
         font: 400 #{$font-size-m-1}/#{$line-height-m-1} $font-family;
         color: $Gray-500;
-        margin-bottom: 2.4rem;
+        margin-bottom: 1.8rem;
     }
 
     &DescripLevel {
@@ -75,12 +75,12 @@
 }
 
 .progressbar {
-    height: 4px;
+    height: 0.4rem;
     background-color: $Gray-100;
-    border-radius: 2px;
+    border-radius: 0.2px;
     overflow: hidden;
     position: relative;
-    margin-top: 10px;
+    margin-top: 1rem;
 
     .progress {
         height: 100%;
@@ -90,11 +90,13 @@
 }
 
 .totalLevel {
-    font: 600 #{$font-size-m-2}/#{$line-height-m-1} $font-family;
+    font: 600 #{$font-size-m-1}/#{$line-height-m-1} $font-family;
     color: $Gray-400;
+    margin-left: -0.4rem;
 }
 
 .progressbarLevel {
+    margin-top: 1.2rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;

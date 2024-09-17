@@ -8,8 +8,6 @@ import s from './Header.module.scss';
 const Header = memo(() => {
   const { pathname } = useLocation();
 
-  console.log(pathname);
-
   const title = useMemo(() => getHeaderTitle(pathname), [pathname]);
 
   return (

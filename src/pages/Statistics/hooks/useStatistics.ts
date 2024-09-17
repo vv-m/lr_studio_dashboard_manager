@@ -1,16 +1,18 @@
 import { useEffect, useState } from 'react';
-import useSvodkaHttpController from 'shared/http/SvodkaHttpController';
-import TSvodkaManager, {
+import useStatisticsHttpController from 'shared/http/useStatisticsHttpControllerHttpController';
+import TStatisticsManager, {
   ICalls,
   IDialogues,
-  TSvodkaDeals,
-  TSvodkaDepartment,
-} from '../Svodka.model';
+  TStatisticsDeals,
+  TStatisticsDepartment,
+} from '../Statistics.model';
 
-const useSvodka = () => {
-  const [dataManager, setDataManager] = useState<TSvodkaManager | null>(null);
-  const [dataDepartment, setDataDepartment] = useState<TSvodkaDepartment | null>(null);
-  const [dataDeals, setDataDeals] = useState<TSvodkaDeals | null>(null);
+const useStatistics = () => {
+  const [dataManager, setDataManager] = useState<TStatisticsManager | null>(null);
+  const [dataDepartment, setDataDepartment] = useState<TStatisticsDepartment | null>(
+    null,
+  );
+  const [dataDeals, setDataDeals] = useState<TStatisticsDeals | null>(null);
   const [dataDialogues, setDataDialogues] = useState<IDialogues | null>(null);
   const [dataCalls, setDataCalls] = useState<ICalls | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -22,7 +24,7 @@ const useSvodka = () => {
     getLoadDeals,
     getLoadDataDialogues,
     getLoadDataCalls,
-  } = useSvodkaHttpController();
+  } = useStatisticsHttpController();
 
   const id = localStorage.getItem('idUser') || 151;
 
@@ -66,4 +68,4 @@ const useSvodka = () => {
   };
 };
 
-export default useSvodka;
+export default useStatistics;

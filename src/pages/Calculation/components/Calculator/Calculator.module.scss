@@ -4,12 +4,12 @@
 .form {
     flex-direction: column;
     display: flex;
-    gap: 2.4rem;
 }
 
 .title {
-    font: 600 #{$font-size-m-2}/#{$line-height-m-1} $font-family;
-    color: $Gray-950
+    font: 600 #{$font-size-m-1}/#{$line-height-m-1} $font-family;
+    color: $Gray-950;
+    margin-bottom: 2rem;
 }
 
 .inputs {
@@ -17,6 +17,7 @@
     flex-direction: row;
     flex: 1;
     gap: 2rem;
+    margin-bottom: 2rem;
 
     >div {
         flex: 1;
@@ -28,6 +29,7 @@
     flex-direction: row;
     flex: 1;
     gap: 2rem;
+    margin-bottom: 2rem;
 
     >div {
         flex: 1;
@@ -35,7 +37,7 @@
 }
 
 .reset {
-    margin-top: 2.4rem;
+    margin-top: 1.6rem;
 }
 
 .button {
@@ -48,7 +50,7 @@
     border-radius: 1.2rem;
     background-color: $White-000;
     border: 0.1rem solid $Gray-200;
-    font : 400 #{$font-size-m-2}/#{$line-height-m-1} $font-family;
+    font : 400 #{$font-size-m-1}/#{$line-height-m-1} $font-family;
     color: $Gray-950;
 
     &:active {

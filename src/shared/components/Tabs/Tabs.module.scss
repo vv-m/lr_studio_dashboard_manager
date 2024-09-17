@@ -3,10 +3,10 @@
 
 .navTabs {
 
-    padding-left: 2.4rem;
+    padding-left: 2rem;
     display: flex;
     align-items: center;
-    height: 7.2rem;
+    height: 6rem;
     width: 100%
 }
 
@@ -23,11 +23,11 @@
     align-items: center;
     margin-right: 2rem;
     transition: 0.3s;
-    height: 7.3rem;
+    height: 6rem;
     border-bottom: 0.3rem solid transparent;
     cursor: pointer;
     color: $Gray-400;
-    font : 600 #{$font-size-m-2}/#{$line-height-m-1} $font-family;
+    font : 400 #{$font-size-m-1}/#{$line-height-m-1} $font-family;
 }
 
 .label {
@@ -36,7 +36,7 @@
 
 .navTabsItemActive {
     color: $Gray-950;
-    font : 600 #{$font-size-m-2}/#{$line-height-m-1} $font-family;
+    font : 700 #{$font-size-m-1}/#{$line-height-m-1} $font-family;
     border-color: $Red-500;
     transition: 0.3s;
 

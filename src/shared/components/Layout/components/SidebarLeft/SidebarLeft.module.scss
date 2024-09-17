@@ -40,7 +40,7 @@
     cursor: pointer;
 
     &Text {
-        font: 400 #{$font-size-m-2}/#{$line-height-m-1} $font-family;
+        font: 400 #{$font-size-m-1}/#{$line-height-m-1} $font-family;
         color: $White-000;
     }
 
@@ -89,7 +89,7 @@
     }
 
     &Name {
-        font: 400 #{$font-size-m-2}/#{$line-height-m-1} $font-family;
+        font: 400 #{$font-size-m-1}/#{$line-height-m-1} $font-family;
         color: $White-000
     }
 
