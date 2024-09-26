@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import useExchangeRateHttpController from 'shared/http/ExchangeRateHttpController';
+import useExchangeRateHttpController from 'shared/http/useExchangeRateHttpController';
 
 interface IValueCurrency {
   USD: string;

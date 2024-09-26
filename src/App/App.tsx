@@ -1,5 +1,5 @@
 import Calculation from 'pages/Calculation';
-import Calls from 'pages/Calls';
+import Calls from 'pages/Calls/Calls';
 import Statistics from 'pages/Statistics/Statistics';
 
 import { Route, Routes } from 'react-router-dom';
@@ -19,7 +19,7 @@ function App() {
           }
         >
           <Route index element={<Statistics />} />
-          <Route path=":chapter" element={<Calls />} />
+          <Route path="/calls" element={<Calls />} />
           <Route path="/calculation" element={<Calculation />} />
         </Route>
       </Routes>

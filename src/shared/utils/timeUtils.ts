@@ -24,4 +24,42 @@ const getCurrentYearAndMonth = () => {
   };
 };
 
+export const getMonthInGenitive = (month: string) => {
+  const monthsMap: { [key: string]: string } = {
+    Январь: 'Января',
+    Февраль: 'Февраля',
+    Март: 'Марта',
+    Апрель: 'Апреля',
+    Май: 'Мая',
+    Июнь: 'Июня',
+    Июль: 'Июля',
+    Август: 'Августа',
+    Сентябрь: 'Сентября',
+    Октябрь: 'Октября',
+    Ноябрь: 'Ноября',
+    Декабрь: 'Декабря',
+  };
+
+  return monthsMap[month] || month;
+};
+
+export const getShortMonthName = (month: string) => {
+  const monthMap: { [key: string]: string } = {
+    Январь: 'Янв',
+    Февраль: 'Фев',
+    Март: 'Мар',
+    Апрель: 'Апр',
+    Май: 'Май',
+    Июнь: 'Июн',
+    Июль: 'Июл',
+    Август: 'Авг',
+    Сентябрь: 'Сен',
+    Октябрь: 'Окт',
+    Ноябрь: 'Ноя',
+    Декабрь: 'Дек',
+  };
+
+  return monthMap[month] || month;
+};
+
 export default getCurrentYearAndMonth;

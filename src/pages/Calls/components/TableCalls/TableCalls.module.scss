@@ -1,0 +1,78 @@
+@use 'src/styles/fonts.scss'as *;
+@use 'src/styles/colors.scss'as *;
+@use 'src/styles/variables.scss'as *;
+
+
+.table {
+    width: 50.3vw;
+    border-radius: 1.2rem;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    background-color: $White-000;
+    padding: 2rem;
+    width: 100%;
+    border-radius: 1.2rem 1.2rem 0 0;
+    font : 400 #{$font-size-m-1}/#{$line-height-m-1} $font-family;
+
+    >div {
+        flex: 1;
+    }
+}
+
+.period {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.type {
+    display: flex;
+    flex-direction: row;
+    gap: 0.4rem;
+    align-items: center;
+    justify-content: end;
+
+}
+
+.missed {
+    color: $Red-500
+}
+
+.result {
+    display: flex;
+    flex-direction: row;
+    background-color: $Gray-050;
+    padding: 1.2rem 2rem;
+    width: 100%;
+    font : 700 #{$font-size-m-1}/#{$line-height-m-1} $font-family;
+
+    >div {
+        flex: 1;
+    }
+}
+
+.onePeriod {
+    display: flex;
+    flex-direction: row;
+    background-color: $Gray-050;
+    padding: 1.2rem 2rem;
+    width: 100%;
+    font : 400 #{$font-size-m-1}/#{$line-height-m-1} $font-family;
+
+    >div {
+        flex: 1;
+    }
+}
+
+.list {
+    :last-child {
+        border-radius: 0 0 1.2rem 1.2rem;
+    }
+}
+
+.whiteBack {
+    background: $White-000;
+}
