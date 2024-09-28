@@ -3,6 +3,8 @@ import s from './TableCalls.module.scss';
 import cn from 'classnames';
 import Icons from 'shared/components/Icons/Icons';
 
+const uniqKey = (k: number) => `key-${k}`;
+
 interface ITableCalls {
   periods?: {
     incoming: number;
@@ -49,7 +51,7 @@ const TableCalls: FC<ITableCalls> = memo(({ periods }) => {
       <div className={s.list}>
         {periods?.map((onePeriod, index) => (
           <div
-            key={onePeriod.total + onePeriod.missed}
+            key={uniqKey(index)}
             className={cn(s.onePeriod, { [s.whiteBack]: index % 2 !== 1 })}
           >
             <div className={s.period}>{`${onePeriod.month}, ${onePeriod.year}`}</div>

@@ -5,20 +5,21 @@ import s from './Calls.module.scss';
 import Graph from './components/Graph/Graph';
 import TableCalls from './components/TableCalls/TableCalls';
 import useCalls from './useCalls';
+import Diagram from './components/Diagram/Diagram';
 
 const Calls: FC = memo(() => {
   const { dataCalls, setFilterGraphCalls, filterGraphCalls } = useCalls();
 
   return (
     <AnimatePresence>
-      <div className={s.main}>
-        <motion.div
-          initial={{ y: -10, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          exit={{ y: 10, opacity: 0 }}
-          transition={{ duration: 0.3 }}
-          className={s.topContainer}
-        >
+      <motion.div
+        initial={{ y: -10, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        exit={{ y: 10, opacity: 0 }}
+        transition={{ duration: 0.3 }}
+        className={s.main}
+      >
+        <div className={s.topContainer}>
           <div className={s.topContainerGraph}>
             <Graph
               setFilterGraphCalls={setFilterGraphCalls}
@@ -26,26 +27,14 @@ const Calls: FC = memo(() => {
               dataCalls={dataCalls}
             />
           </div>
-          <motion.div
-            initial={{ y: -10, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: 10, opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className={s.topContainerDiagramma}
-          >
-            asda
-          </motion.div>
-        </motion.div>
-        <motion.div
-          initial={{ y: -10, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          exit={{ y: 10, opacity: 0 }}
-          transition={{ duration: 0.3 }}
-          className={s.bottomContainer}
-        >
+          <div className={s.topContainerDiagram}>
+            <Diagram dataCalls={dataCalls} />
+          </div>
+        </div>
+        <div className={s.bottomContainer}>
           <TableCalls periods={dataCalls?.periods} />
-        </motion.div>
-      </div>
+        </div>
+      </motion.div>
     </AnimatePresence>
   );
 });

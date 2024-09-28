@@ -126,7 +126,7 @@ const Graph: FC<IGraph> = memo(({ filterGraphCalls, setFilterGraphCalls, dataCal
       </div>
 
       {dataCalls?.periods && (
-        <div style={{ width: '100%', height: '388px' }}>
+        <div style={{ width: '100%', height: '207px' }}>
           <ResponsiveContainer width="100%" height="100%">
             <LineChart
               data={dataCalls.periods}
@@ -170,7 +170,7 @@ const Graph: FC<IGraph> = memo(({ filterGraphCalls, setFilterGraphCalls, dataCal
       <div className={s.legend}>
         <div>
           <Icons name="BlueCheck" />
-          Вхоядщие
+          Входящие
         </div>
         <div>
           <Icons name="RedCheck" />
