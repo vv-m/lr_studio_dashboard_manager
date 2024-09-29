@@ -82,10 +82,10 @@ const Calculator: FC<ICalculator> = memo(
       if (flagCalculation) {
         let currentCurrencyValue = 0;
         let priceRuble = 0;
-        if (dataFrom.currency === 'USD') {
+        if (dataFrom.currency === 'USD $') {
           currentCurrencyValue = +valueCurrency.USD * MARKUPCB;
         }
-        if (dataFrom.currency === 'RMB') {
+        if (dataFrom.currency === 'RMB ¥') {
           currentCurrencyValue = +valueCurrency.RMD * MARKUPCB;
         }
         priceRuble = +dataFrom.price * currentCurrencyValue;
@@ -166,7 +166,7 @@ const Calculator: FC<ICalculator> = memo(
             onChange={handlerChangePrice}
             value={dataFrom.price}
             label="Цена"
-            typeValue="$"
+            typeValue={dataFrom.currency.includes('USD') ? '$' : '¥'}
           />
           <div>
             <Switcher

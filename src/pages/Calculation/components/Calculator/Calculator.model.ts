@@ -7,7 +7,7 @@ interface IFormData {
   currency: string;
 }
 
-export const OPTIONS = ['USD', 'RMB'];
+export const OPTIONS = ['USD $', 'RMB ¥'];
 
 export const defaultFormData = {
   length: '',

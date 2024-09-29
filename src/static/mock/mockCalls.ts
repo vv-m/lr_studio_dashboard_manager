@@ -1,0 +1,160 @@
+const threeMonths = {
+  periods: [
+    {
+      month: 'Июнь',
+      year: 2023,
+      total: 300,
+      incoming: 50,
+      missed: 150,
+      outgoing: 100,
+    },
+    {
+      month: 'Июль',
+      year: 2023,
+      total: 500,
+      incoming: 350,
+      missed: 50,
+      outgoing: 100,
+    },
+    {
+      month: 'Август',
+      year: 2023,
+      total: 600,
+      incoming: 150,
+      missed: 150,
+      outgoing: 300,
+    },
+  ],
+};
+
+export const sixMonths = {
+  periods: [
+    {
+      month: 'Июнь',
+      year: 2023,
+      total: 300,
+      incoming: 50,
+      missed: 150,
+      outgoing: 100,
+    },
+    {
+      month: 'Июль',
+      year: 2023,
+      total: 500,
+      incoming: 350,
+      missed: 50,
+      outgoing: 100,
+    },
+    {
+      month: 'Август',
+      year: 2023,
+      total: 600,
+      incoming: 150,
+      missed: 150,
+      outgoing: 300,
+    },
+    {
+      month: 'Сентябрь',
+      year: 2023,
+      total: 700,
+      incoming: 550,
+      missed: 150,
+      outgoing: 0,
+    },
+    {
+      month: 'Октябрь',
+      year: 2023,
+      total: 500,
+      incoming: 350,
+      missed: 50,
+      outgoing: 100,
+    },
+    {
+      month: 'Ноябрь',
+      year: 2023,
+      total: 650,
+      incoming: 150,
+      missed: 400,
+      outgoing: 100,
+    },
+  ],
+};
+
+export const nineMonths = {
+  periods: [
+    {
+      month: 'Июнь',
+      year: 2023,
+      total: 300,
+      incoming: 50,
+      missed: 150,
+      outgoing: 100,
+    },
+    {
+      month: 'Июль',
+      year: 2023,
+      total: 500,
+      incoming: 350,
+      missed: 50,
+      outgoing: 100,
+    },
+    {
+      month: 'Август',
+      year: 2023,
+      total: 600,
+      incoming: 150,
+      missed: 150,
+      outgoing: 300,
+    },
+    {
+      month: 'Сентябрь',
+      year: 2023,
+      total: 700,
+      incoming: 550,
+      missed: 150,
+      outgoing: 0,
+    },
+    {
+      month: 'Октябрь',
+      year: 2023,
+      total: 500,
+      incoming: 350,
+      missed: 50,
+      outgoing: 100,
+    },
+    {
+      month: 'Ноябрь',
+      year: 2023,
+      total: 650,
+      incoming: 150,
+      missed: 400,
+      outgoing: 100,
+    },
+    {
+      month: 'Декабрь',
+      year: 2023,
+      total: 350,
+      incoming: 150,
+      missed: 100,
+      outgoing: 100,
+    },
+    {
+      month: 'Январь',
+      year: 2024,
+      total: 520,
+      incoming: 20,
+      missed: 350,
+      outgoing: 150,
+    },
+    {
+      month: 'Февраль',
+      year: 2024,
+      total: 250,
+      incoming: 150,
+      missed: 50,
+      outgoing: 50,
+    },
+  ],
+};
+
+export default threeMonths;

@@ -1,0 +1,30 @@
+@use 'src/styles/fonts.scss'as *;
+@use 'src/styles/colors.scss'as *;
+@use 'src/styles/variables.scss'as *;
+
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+    width: 100%;
+}
+
+.topContainer,
+.bottomContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 3.2rem;
+    width: 100%;
+
+    &Graph {
+        width: 50.3vw;
+    }
+
+    &Diagram {
+        width: 24.08vw;
+    }
+}
+
+.bottomContainer {
+    border-radius: 1.2rem;
+}
