@@ -1,0 +1,47 @@
+@use 'src/styles/fonts.scss'as *;
+@use 'src/styles/colors.scss'as *;
+@use 'src/styles/variables.scss'as *;
+
+.main {
+    display: flex;
+    flex-direction: column;
+    background-color: $White-000;
+    border-radius: 1.2rem;
+    width: 100%;
+}
+
+.line {
+    border-bottom: 0.1rem solid $Gray-100;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 2rem;
+
+}
+
+.lineSeparator {
+    margin: 2rem 0;
+    height: 0.1rem;
+    background-color: $Gray-100;
+
+}
+
+.period {
+    display: flex;
+    flex-direction: row;
+    padding: 2rem;
+    font : 600 #{$font-size-m-1}/#{$line-height-m-1} $font-family;
+    color: $Gray-400;
+    gap: 0.5rem;
+    width: 100%;
+    justify-content: end;
+
+    &Month {
+        color: $Gray-950;
+    }
+}
+
+.title {
+    color: $Gray-950;
+    font : 600 #{$font-size-m-1}/#{$line-height-m-1} $font-family;
+    margin: 0 0 2rem 2rem;
+}

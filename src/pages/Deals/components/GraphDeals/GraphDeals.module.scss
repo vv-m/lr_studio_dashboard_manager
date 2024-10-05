@@ -1,0 +1,88 @@
+@use 'src/styles/fonts.scss'as *;
+@use 'src/styles/colors.scss'as *;
+@use 'src/styles/variables.scss'as *;
+
+.main {
+    display: flex;
+    flex-direction: column;
+    background-color: $White-000;
+    border-radius: 1.2rem;
+    width: 100%;
+}
+
+.line {
+    border-bottom: 0.1rem solid $Gray-100;
+}
+
+.period {
+    display: flex;
+    flex-direction: row;
+    padding: 2rem;
+    font : 600 #{$font-size-m-1}/#{$line-height-m-1} $font-family;
+    color: $Gray-400;
+    gap: 0.5rem;
+
+    &Month {
+        color: $Gray-950;
+    }
+}
+
+.legend {
+    padding: 2rem 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    font : 400 #{$font-size-m-1}/#{$line-height-m-1} $font-family;
+
+    >div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 0.8rem
+    }
+}
+
+.customTooltip {
+    width: 20.4rem;
+    display: flex;
+    flex-direction: column;
+    background-color: $White-000;
+    padding: 1.2rem;
+    border-radius: 1.2rem;
+    box-shadow: 0 0 1.2rem 0 #0000001F;
+}
+
+.label {
+    font : 600 #{$font-size-s-1}/#{$line-height-m-1} $font-family
+}
+
+.tooltipItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.4rem;
+
+    &Name {
+        font : 400 #{$font-size-s-1}/#{$line-height-s-1} $font-family;
+        color: $Gray-400
+    }
+
+    &Value {
+        font : 500 #{$font-size-s-1}/#{$line-height-s-1} $font-family;
+
+    }
+}
+
+
+.successful_deals {
+    color: $Malachite-500
+}
+
+.total_deals {
+    color: $Blue-500;
+}
+
+.conversion {
+    color: $Red-500
+}

@@ -81,17 +81,17 @@
 }
 
 .bottomBlock {
-    margin-top: 1rem;
-    font: 400 #{$font-size-m-1}/#{$line-height-m-1} $font-family;
+    margin-top: 1.9rem;
+    font: 400 #{$font-size-m-1}/0 $font-family;
     color: $Malachite-800
 }
 
 .image {
-    width: 14.8rem;
-    height: 14.8rem;
+    width: 10.8rem;
+    height: 10.8rem;
     position: absolute;
-    bottom: -1rem;
-    right: -1rem;
+    bottom: 0;
+    right: 0;
 
 }
 
@@ -116,32 +116,4 @@
         gap: 3.2rem;
     }
 
-}
-
-.conversionRate {
-    display: flex;
-    flex-direction: column;
-    padding: 2rem;
-    border-radius: 1.2rem;
-    background: $White-000;
-}
-
-.titleBlock {
-    display: flex;
-    flex-direction: row;
-    gap: 0.8rem;
-    color: $Gray-950;
-    font : 600 #{$font-size-m-1}/#{$line-height-m-1} $font-family;
-}
-
-.circleProgress {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-
-    & text {
-        font : 700 #{$font-size-s-1}/#{$line-height-l-2} $font-family;
-        color: $Gray-950;
-    }
 }

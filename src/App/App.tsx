@@ -1,5 +1,6 @@
 import Calculation from 'pages/Calculation';
 import Calls from 'pages/Calls/Calls';
+import Deals from 'pages/Deals/Deals';
 import Statistics from 'pages/Statistics/Statistics';
 
 import { Route, Routes } from 'react-router-dom';
@@ -21,6 +22,7 @@ function App() {
           <Route index element={<Statistics />} />
           <Route path="/calls" element={<Calls />} />
           <Route path="/calculation" element={<Calculation />} />
+          <Route path="/deals" element={<Deals />} />
         </Route>
       </Routes>
     </>
