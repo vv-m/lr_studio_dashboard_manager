@@ -1,7 +1,6 @@
-import React, { FC, memo, useMemo, useEffect, useState } from 'react';
+import React, { FC, memo, useMemo, } from 'react';
 import Icons from 'shared/components/Icons/Icons';
 import cn from 'classnames';
-import ReactDOM from 'react-dom';
 import s from './InfoBlock.module.scss';
 import car from 'static/images/car.png';
 
@@ -32,21 +31,8 @@ const InfoBlock: FC<IInfoBlock> = memo(
     nextPercent,
   }) => {
     const progress = useMemo(() => (done / goal) * 100, [done, goal]);
-    const [iconPosition, setIconPosition] = useState({ top: 0, left: 0 });
 
     const progressBarRef = React.useRef<HTMLDivElement>(null);
-
-    const a = 100 - progress;
-
-    useEffect(() => {
-      if (done > goal && progressBarRef.current) {
-        const progressBarRect = progressBarRef.current.getBoundingClientRect();
-        setIconPosition({
-          top: progressBarRect.top + window.scrollY,
-          left: progressBarRect.left + window.scrollX + progressBarRect.width,
-        });
-      }
-    }, [done, goal]);
 
     return (
       <div className={s.blockWrapper}>
@@ -54,7 +40,7 @@ const InfoBlock: FC<IInfoBlock> = memo(
           <div className={s.name}>
             <span>{title}</span>
             {bonusLevel && <span>{bonusLevel}</span>}
-            {levelNext && <span className={s.totalLevel}>{' '}/ {levelNext}</span>}
+            {levelNext && <span className={s.totalLevel}> / {levelNext}</span>}
             <Icons name="Info" />
           </div>
           {!levelNext && (
@@ -81,29 +67,31 @@ const InfoBlock: FC<IInfoBlock> = memo(
             {description}
           </div>
           {!levelNext && (
-            <div className={s.progressbar} ref={progressBarRef}>
-              <div
-                className={s.progress}
-                style={{ width: `${Math.min(progress, 100)}%` }}
-              />
-              {done > goal &&
-                ReactDOM.createPortal(
-                  <div
-                    className={s.doneIcon}
-                    style={{
-                      position: 'absolute',
-                      top: `${iconPosition.top + 2.5}px`,
-                      left: `${iconPosition.left}px`,
-                      transform: 'translate(-50%, -50%)',
-                      background: '#FFFFFF',
-                      borderRadius: '100px',
-                    }}
-                  >
-                    <Icons name="Done" />
-                  </div>,
-                  document.body,
-                )}
-            </div>
+            <>
+              <div className={s.progressbar} ref={progressBarRef}>
+                <div
+                  className={s.progress}
+                  style={{ width: `${Math.min(progress, 100)}%` }}
+                />
+              </div>
+              {done > goal && (
+                <div
+                  className={s.doneIcon}
+                  style={
+                    {
+                      // position: 'absolute',
+                      // top: `${iconPosition.top + 2.5}px`,
+                      // left: `${iconPosition.left}px`,
+                      // transform: 'translate(-50%, -50%)',
+                      // background: '#FFFFFF',
+                      // borderRadius: '100px',
+                    }
+                  }
+                >
+                  <Icons name="Done" />
+                </div>
+              )}
+            </>
           )}
           {levelNext && (
             <div className={s.progressbarLevel}>
@@ -114,7 +102,10 @@ const InfoBlock: FC<IInfoBlock> = memo(
                   style={{ width: `${Math.min(progress, 100)}%` }}
                 ></div>
                 <img className={s.car} src={car}></img>
-                <div className={s.noDone} style={{ width: `${Math.min(a, 100)}%` }}></div>
+                <div
+                  className={s.noDone}
+                  style={{ width: `${Math.min(100 - progress, 100)}%` }}
+                ></div>
               </div>
               <div className={cn(s.percent, s.percentGray)}>{nextPercent}%</div>
             </div>

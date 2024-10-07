@@ -1,7 +1,8 @@
-import React, { Dispatch, FC, memo, useCallback } from 'react';
-import Tabs from 'shared/components/Tabs/Tabs';
-import tabsTableCalls from 'shared/constants/TabsTableCalls';
-import s from './Graph.module.scss';
+import { IDeal } from 'pages/Deals/Deals.model';
+import React, { FC, memo } from 'react';
+import s from './GraphDeals.module.scss';
+import cn from 'classnames';
+import { getShortMonthName } from 'shared/utils/timeUtils';
 import {
   CartesianGrid,
   Line,
@@ -12,19 +13,11 @@ import {
   YAxis,
 } from 'recharts';
 import Icons from 'shared/components/Icons/Icons';
-import { getMonthInGenitive, getShortMonthName } from 'shared/utils/timeUtils';
-import cn from 'classnames';
-
-interface IGraph {
-  setFilterGraphCalls: Dispatch<React.SetStateAction<'3' | '6' | '9'>>;
-  filterGraphCalls: '3' | '6' | '9';
-  dataCalls: IDataCalls | null;
-}
 
 const lineNames = {
-  outgoing: 'Исходящие',
-  incoming: 'Входящие',
-  missed: 'Пропущенные',
+    successful_deals: 'Успешные сделки',
+    total_deals: 'Сделки с изменениями',
+    conversion: 'Коонверсия',
 };
 
 const CustomTooltip = ({ active, payload }: any) => {
@@ -34,18 +27,17 @@ const CustomTooltip = ({ active, payload }: any) => {
     return (
       <div className={s.customTooltip}>
         <p className={s.label}>{`${month} ${year}`}</p>
-        {payload.map((entry: any, index: number) => {
-          return (
-            <div key={`item-${index}`} className={s.tooltipItem}>
-              <div
-                className={s.tooltipItemName}
-              >{`${lineNames[entry.dataKey as 'outgoing' | 'incoming' | 'missed'] || entry.dataKey}`}</div>
-              <div className={cn(s.tooltipItemValue, s[entry.dataKey])}>
-                {entry.value}
-              </div>
+        {payload.map((entry: any, index: number) => (
+          <div key={`item-${index}`} className={s.tooltipItem}>
+            <div
+              className={s.tooltipItemName}
+            >{`${lineNames[entry.dataKey as 'conversion' | 'successful_deals' | 'total_deals'] || entry.dataKey}`}</div>
+            <div className={cn(s.tooltipItemValue, s[entry.dataKey])}>
+              {entry.value}
+              {entry.dataKey === 'conversion' && '%'}
             </div>
-          );
-        })}
+          </div>
+        ))}
       </div>
     );
   }
@@ -53,14 +45,11 @@ const CustomTooltip = ({ active, payload }: any) => {
   return null;
 };
 
-const Graph: FC<IGraph> = memo(({ filterGraphCalls, setFilterGraphCalls, dataCalls }) => {
-  const hadleChosePeriod = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>) => {
-      setFilterGraphCalls(e.target.value as '3' | '6' | '9');
-    },
-    [setFilterGraphCalls],
-  );
+interface IGraphDeals {
+  dataDeals: IDeal[] | null;
+}
 
+const GraphDeals: FC<IGraphDeals> = memo(({ dataDeals }) => {
   const CustomXAxisTick = (props: any) => {
     const { x, y, payload } = props;
     const { value } = payload;
@@ -105,35 +94,37 @@ const Graph: FC<IGraph> = memo(({ filterGraphCalls, setFilterGraphCalls, dataCal
     );
   };
 
-  return (
-    <div className={s.main}>
-      <div className={s.line}>
-        <Tabs
-          typeTabs={tabsTableCalls}
-          isCheckedTab={filterGraphCalls}
-          onChange={hadleChosePeriod}
-        />
-      </div>
-      <div className={s.period}>
-        <span
-          className={s.periodMonth}
-        >{`1 ${getMonthInGenitive(dataCalls?.periods[0].month || '')}`}</span>
-        <span>{`${dataCalls?.periods[0].year}`}</span>
-        <span
-          className={s.periodMonth}
-        >{`- 1 ${getMonthInGenitive(dataCalls?.periods.at(-1)?.month || '')}`}</span>
-        <span>{`${dataCalls?.periods.at(-1)?.year}`}</span>
-      </div>
+  const CustomYAxisTickRight = (props: any) => {
+    const { x, y, payload } = props;
+    const { value } = payload;
 
-      {dataCalls?.periods && (
+    return (
+      <text
+        y={y}
+        dy={1}
+        textAnchor="middle"
+        fill="#8E95A2"
+        fontSize={12}
+        fontWeight={400}
+      >
+        <tspan x={x} dy="0.4rem" dx={'2rem'}>
+          {value} %
+        </tspan>
+      </text>
+    );
+  };
+
+  return (
+    <>
+      {dataDeals && (
         <div style={{ width: '100%', height: '207px' }}>
           <ResponsiveContainer width="100%" height="100%">
             <LineChart
-              data={dataCalls.periods}
+              data={dataDeals}
               margin={{
-                top: 0,
-                right: 30,
-                left: -15,
+                top: 10,
+                right: 0,
+                left: 10,
                 bottom: 15,
               }}
             >
@@ -143,24 +134,30 @@ const Graph: FC<IGraph> = memo(({ filterGraphCalls, setFilterGraphCalls, dataCal
                 tick={<CustomXAxisTick />}
               />
               <YAxis tick={<CustomYAxisTick />} />
+              <YAxis
+                tick={<CustomYAxisTickRight />}
+                orientation="right"
+                yAxisId="right"
+              />
               <Tooltip content={<CustomTooltip />} />
 
               <Line
                 type="linear"
-                dataKey="outgoing"
-                stroke="#36d001"
-                activeDot={{ r: 6 }}
-              />
-              <Line
-                type="linear"
-                dataKey="incoming"
-                stroke="#2FB8FF"
-                activeDot={{ r: 6 }}
-              />
-              <Line
-                type="linear"
-                dataKey="missed"
+                dataKey="conversion"
                 stroke="#FF5821"
+                activeDot={{ r: 6 }}
+                yAxisId="right"
+              />
+              <Line
+                type="linear"
+                dataKey="successful_deals"
+                stroke="#36D000"
+                activeDot={{ r: 6 }}
+              />
+              <Line
+                type="linear"
+                dataKey="total_deals"
+                stroke="#2FB8FF"
                 activeDot={{ r: 6 }}
               />
             </LineChart>
@@ -170,19 +167,19 @@ const Graph: FC<IGraph> = memo(({ filterGraphCalls, setFilterGraphCalls, dataCal
       <div className={s.legend}>
         <div>
           <Icons name="BlueCheck" />
-          Входящие
+          Сделки с изменениями
         </div>
         <div>
           <Icons name="RedCheck" />
-          Пропущенные
+          Конверсия
         </div>
         <div>
           <Icons name="GreenCheck" />
-          Исходящие
+          Успешные сделки
         </div>
       </div>
-    </div>
+    </>
   );
 });
 
-export default Graph;
+export default GraphDeals;

@@ -21,7 +21,12 @@
     align-items: center;
     justify-content: center;
     position: relative;
+
+    &>div path {
+        outline: none;
+    }
 }
+
 
 .infoOutgoing {
     display: flex;

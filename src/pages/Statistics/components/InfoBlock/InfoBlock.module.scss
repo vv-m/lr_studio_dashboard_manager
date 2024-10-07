@@ -9,6 +9,8 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    position: relative;
+
 }
 
 .upperBlock {
@@ -79,7 +81,7 @@
     background-color: $Gray-100;
     border-radius: 0.2px;
     overflow: hidden;
-    position: relative;
+
     margin-top: 1rem;
 
     .progress {
@@ -149,5 +151,10 @@
     background: $Gray-100;
     transition: width 0.3s ease;
     height: 4px;
+}
 
+.doneIcon {
+    position: absolute;
+    right: 5px;
+    bottom: 10px;
 }

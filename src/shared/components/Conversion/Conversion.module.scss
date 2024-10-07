@@ -1,0 +1,49 @@
+@use 'src/styles/fonts.scss'as *;
+@use 'src/styles/colors.scss'as *;
+@use 'src/styles/variables.scss'as *;
+
+.conversionRate {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    border-radius: 1.2rem;
+    background: $White-000;
+}
+
+.titleBlock {
+    display: flex;
+    flex-direction: row;
+    gap: 0.8rem;
+    color: $Gray-950;
+    font : 600 #{$font-size-m-1}/#{$line-height-m-1} $font-family;
+}
+
+.circleProgress {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    & text {
+        font : 700 #{$font-size-s-1}/#{$line-height-l-2} $font-family;
+        color: $Gray-950;
+    }
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    gap: 0.8rem;
+    justify-content: center;
+    align-items: center;
+    font :600 #{$font-size-m-2}/#{$line-height-m-2} $font-family;
+    color: $Gray-950;
+
+    &Description {
+        padding: 0 2.4rem;
+        text-align: center;
+        font :400 #{$font-size-m-1}/#{$line-height-m-1} $font-family;
+        color: $Gray-500;
+    }
+}

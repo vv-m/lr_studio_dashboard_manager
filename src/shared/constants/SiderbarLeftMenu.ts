@@ -1,7 +1,7 @@
 const SiderbarLeftMenu = [
   { icon: 'Statistics', text: 'Сводка', path: '/' },
   { icon: 'Zvonki', text: 'Звонки', path: '/calls' },
-  { icon: 'Sdelki', text: 'Сделки', path: '/dealings' },
+  { icon: 'Sdelki', text: 'Сделки', path: '/deals' },
   { icon: 'RabGrafic', text: 'Рабочий график', path: '/work_schedule' },
   { icon: 'Servis', text: 'Сервисы' },
 ];
