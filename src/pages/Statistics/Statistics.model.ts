@@ -26,14 +26,17 @@ export type TStatisticsDepartment = {
   next_percent_bonus_level: number;
 };
 
+export interface IRowsDeal {
+  id: string;
+  counterparty_name: string;
+  sum: number;
+  no_payed_sum: number;
+  no_shipped_sum: number;
+}
+[];
+
 export type TStatisticsDeals = {
-  rows: {
-    id: string;
-    counterparty_name: string;
-    sum: number;
-    no_payed_sum: number;
-    no_shipped_sum: number;
-  }[];
+  rows: IRowsDeal[];
   total_sum: number;
   total: number;
   page: number;

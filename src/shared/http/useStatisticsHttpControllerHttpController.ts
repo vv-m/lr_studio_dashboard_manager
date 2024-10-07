@@ -1,6 +1,12 @@
 import axios from 'axios';
 import { useCallback } from 'react';
-import mockStatistics, { mockCalls, mockDealsNotPaid, mockDealsNotShipped, mockDialogues, mockStatisticsDepartment } from 'static/mock/mockSvodka';
+import mockStatistics, {
+  mockCalls,
+  mockDealsNotPaid,
+  mockDealsNotShipped,
+  mockDialogues,
+  mockStatisticsDepartment,
+} from 'static/mock/mockSvodka';
 
 interface IGetLoadDeals {
   filter: 'all' | 'not_shipped' | 'not_paid';
@@ -40,7 +46,7 @@ const useStatisticsHttpController = () => {
     try {
       // Пример запроса
       // const token = localStorage.getItem('token');
-      // const { data } = await axios.get('/api/v1/statistic/sale_department', {
+      // const { data } = await axios.get('/api/v1/statistic/deals', {
       //   headers: { Authorization: `Bearer ${token}` },
       // });
       if (filter === 'not_paid') {

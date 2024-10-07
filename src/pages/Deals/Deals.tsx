@@ -1,17 +1,28 @@
 import React, { FC, memo } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-
-import s from './Deals.module.scss';
 import useDeals from './useDeals';
 import Graphs from './components/Graphs/Graphs';
-import useStatistics from 'pages/Statistics/hooks/useStatistics';
 import Conversion from 'shared/components/Conversion/Conversion';
 import InfoBlock from 'pages/Statistics/components/InfoBlock/InfoBlock';
+import Table from './components/Table/Table';
+
+import s from './Deals.module.scss';
 
 const Deals: FC = memo(() => {
-  const { filterGraphsCalls, setFilterGraphsCalls, dataDeals, dataRevenue } = useDeals();
-
-  const { dataManager } = useStatistics();
+  const {
+    filterGraphsCalls,
+    setFilterGraphsCalls,
+    dataDeals,
+    dataRevenue,
+    dataManager,
+    typeFilter,
+    setTypeFilter,
+    listDeal,
+    setNumberPage,
+    numberPage,
+    totalPage,
+    allTotalDeals,
+  } = useDeals();
 
   return (
     <AnimatePresence>
@@ -31,9 +42,20 @@ const Deals: FC = memo(() => {
               dataDeals={dataDeals}
             />
           </div>
+          {listDeal && (
+            <Table
+              dataDeals={listDeal}
+              setTypeFilter={setTypeFilter}
+              typeFilter={typeFilter}
+              setNumberPage={setNumberPage}
+              numberPage={numberPage}
+              totalPage={totalPage}
+              allTotalDeals={allTotalDeals}
+            />
+          )}
         </div>
         <div className={s.rightContainer}>
-          <Conversion dataManager={dataManager} isDeals></Conversion>
+          <Conversion dataManager={dataManager} isDeals />
           {dataManager && (
             <>
               <InfoBlock
