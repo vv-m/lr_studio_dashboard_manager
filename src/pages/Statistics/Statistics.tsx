@@ -44,7 +44,7 @@ const Statistics = memo(() => {
                   growth={dataManager?.compaired_parcent_qty_deals}
                   title="Cделки"
                   description="Кол-во успешных сделок"
-                  textTooltip="Какой то текст про сделки"
+                  textTooltip="Какой то текст про сделки бла-бла-бла-бла бла-бла-бла-бла бла-бла-бла-бла"
                   placement="bottom"
                   isBackGrey
                 />
@@ -59,7 +59,7 @@ const Statistics = memo(() => {
                       : ''
                   }
                   сurrency
-                  textTooltip="Какой то текст про выручку"
+                  textTooltip="Какой то текст про выручку бла-бла-бла-бла бла-бла-бла-бла"
                   placement="bottom"
                   isBackGrey
                 />
@@ -113,7 +113,7 @@ const Statistics = memo(() => {
                   growth={dataDepartment?.compared_percent_qty_deals}
                   title="Cделки"
                   description="Кол-во успешных сделок"
-                  textTooltip="Какой то текст про сделки"
+                  textTooltip="Какой то текст про сделки бла-бла-бла-бла"
                   placement="bottom"
                   isBackGrey
                 />
@@ -124,7 +124,7 @@ const Statistics = memo(() => {
                   title="Выручка"
                   description={'Сумма успешных сделок'}
                   сurrency
-                  textTooltip="Какой то текст про выручку"
+                  textTooltip="Какой то текст про выручку бла-бла-бла-бла бла-бла"
                   placement="bottom"
                   isBackGrey
                 />
@@ -139,7 +139,7 @@ const Statistics = memo(() => {
                   bonusLevel={dataDepartment.bonus_level}
                   percent={dataDepartment.current_percent_bonus_level}
                   nextPercent={dataDepartment.next_percent_bonus_level}
-                  textTooltip="Какой то текст про уровни"
+                  textTooltip="Какой то текст про уровни бла-бла-бла-бла"
                   placement="bottom"
                   isBackGrey
                 />

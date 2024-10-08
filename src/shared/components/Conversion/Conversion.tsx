@@ -64,7 +64,7 @@ const Conversion: FC<IConversion> = memo(({ dataManager, isDeals }) => {
     <div className={s.conversionRate}>
       <div className={s.titleBlock}>
         <span>{isDeals ? 'Что такое конверсия?' : 'Конверсия'}</span>
-        <Tooltip isBackGrey isShown text="Информация о конверсии" />
+        <Tooltip isBackGrey isShown text="Информация о конверсии бла-бла-бла-бла" />
       </div>
       <div ref={svgRef} className={s.circleProgress}>
         <SemiCircleProgress

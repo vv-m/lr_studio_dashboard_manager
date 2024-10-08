@@ -64,7 +64,7 @@ const Deals: FC = memo(() => {
                 growth={dataManager?.compaired_parcent_qty_deals}
                 title="Cделки"
                 description="Кол-во успешных сделок"
-                textTooltip="Какой то текст про сделки"
+                textTooltip="Какой то текст про сделки бла-бла-бла-бла бла-бла-бла-бла бла-бла-бла-бла"
                 placement="bottom"
                 isBackGrey
               />
@@ -79,7 +79,7 @@ const Deals: FC = memo(() => {
                     : ''
                 }
                 сurrency
-                textTooltip="Какой то текст про выручку"
+                textTooltip="Какой то текст про выручку бла-бла-бла"
                 placement="bottom"
                 isBackGrey
               />
