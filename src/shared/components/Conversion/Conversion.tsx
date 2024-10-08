@@ -4,6 +4,7 @@ import { SemiCircleProgress } from 'react-semicircle-progressbar';
 import TStatisticsManager from 'pages/Statistics/Statistics.model';
 
 import s from './Conversion.module.scss';
+import Tooltip from '../Tooltip/Tooltip';
 
 interface IConversion {
   dataManager: TStatisticsManager | null;
@@ -63,7 +64,7 @@ const Conversion: FC<IConversion> = memo(({ dataManager, isDeals }) => {
     <div className={s.conversionRate}>
       <div className={s.titleBlock}>
         <span>{isDeals ? 'Что такое конверсия?' : 'Конверсия'}</span>
-        <Icons name="Info" />
+        <Tooltip isBackGrey isShown text="Информация о конверсии бла-бла-бла-бла" />
       </div>
       <div ref={svgRef} className={s.circleProgress}>
         <SemiCircleProgress
@@ -77,15 +78,6 @@ const Conversion: FC<IConversion> = memo(({ dataManager, isDeals }) => {
           bgStrokeColor="rgba(237, 238, 241, 1)"
         />
       </div>
-      {isDeals && (
-        <div className={s.info}>
-          <div>Что такое конверсия?</div>
-          <div className={s.infoDescription}>
-            Краткий текст о конверсии до 3-х строк. Что означает текущий уровень и как
-            считается. Либо мотивация к повышению.
-          </div>
-        </div>
-      )}
     </div>
   );
 });

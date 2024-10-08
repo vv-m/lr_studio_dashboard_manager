@@ -9,22 +9,36 @@
     width: 100%;
 }
 
-.topContainer,
-.bottomContainer {
+.topContainer {
     display: flex;
     flex-direction: row;
     gap: 3.2rem;
     width: 100%;
 
     &Graph {
-        width: 50.3vw;
+        flex: 2;
     }
 
     &Diagram {
-        width: 24.08vw;
+        flex: 0.96;
+
     }
 }
 
 .bottomContainer {
     border-radius: 1.2rem;
+    display: flex;
+    flex-direction: row;
+    gap: 3.2rem;
+    width: 100%;
+
+
+    &Table {
+        flex: 2;
+    }
+
+    &Empty {
+        flex: 0.96;
+
+    }
 }

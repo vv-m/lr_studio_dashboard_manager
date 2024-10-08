@@ -1,0 +1,120 @@
+@use 'src/styles/colors.scss'as *;
+@use 'src/styles/variables.scss'as *;
+
+.wrapper {
+    position: relative;
+    display: inline-block;
+
+    .text {
+        position: absolute;
+        padding: 0.8rem 1.2rem;
+        background-color: #61646B;
+        color: $White-000;
+        font:500 #{$font-size-m-1}/#{$line-height-m-1} $font-family;
+        border-radius: 0.8rem;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+        width: 31rem;
+        z-index: 2;
+
+        &.backGrey {
+            background-color: #61646B;
+            color: $White-000;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            border-style: solid;
+        }
+
+
+    }
+
+    &:hover .text {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &.top .text {
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-bottom: 0.8rem;
+
+        &::after {
+            top: 100%;
+            left: 50%;
+            border-width: 0.5rem 0.5rem 0 0.5rem;
+            border-color: #61646B transparent transparent transparent;
+            transform: translateX(-50%);
+        }
+
+        &.backGrey::after {
+            border-color: #61646B transparent transparent transparent;
+        }
+    }
+
+
+    &.bottom .text {
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-top: 0.8rem;
+
+        &::after {
+            bottom: 100%;
+            left: 50%;
+            border-width: 0 0.5rem 0.5rem 0.5rem;
+            border-color: transparent transparent #61646B transparent;
+            transform: translateX(-50%);
+        }
+
+        &.backGrey::after {
+            border-color: transparent transparent #61646B transparent;
+        }
+    }
+
+    &.left .text {
+        right: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+        margin-right: 0.8rem;
+
+        &::after {
+            right: -0.5rem;
+            top: 50%;
+            border-width: 0.5rem 0 0.5rem 0.5rem;
+            border-color: transparent transparent transparent #61646B;
+            transform: translateY(-50%);
+        }
+
+        &.backGrey::after {
+            border-color: transparent transparent transparent #61646B;
+        }
+    }
+
+    &.right .text {
+        left: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+        margin-left: 8px;
+
+        &::after {
+            left: -0.5rem;
+            top: 50%;
+            border-width: 0.5rem 0.5rem 0.5rem 0;
+            border-color: transparent #61646B transparent transparent;
+            transform: translateY(-50%);
+        }
+
+        &.backGrey::after {
+            border-color: transparent #61646B transparent transparent;
+        }
+    }
+}
+
+.icon {
+    cursor: help;
+}

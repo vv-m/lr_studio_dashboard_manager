@@ -9,20 +9,22 @@
     width: 100%;
 }
 
-.leftContainer,
+
 .rightContainer {
     display: flex;
     flex-direction: column;
     gap: 3.2rem;
     width: 100%;
+    flex: 0.96;
+}
 
-    &Graph {
-        width: 50.3vw;
-    }
 
-    &Diagram {
-        width: 24.08vw;
-    }
+.leftContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+    width: 100%;
+    flex: 2;
 }
 
 .bottomContainer {
