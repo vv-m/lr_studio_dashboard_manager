@@ -38,7 +38,7 @@ const Diagram: FC<IDiagram> = memo(({ dataCalls }) => {
   return (
     <div className={s.main}>
       <div className={s.diagram}>
-        <PieChart width={290} height={290}>
+        <PieChart width={280} height={280}>
           <defs>
             {GRADIENTS.map((gradient) => (
               <linearGradient

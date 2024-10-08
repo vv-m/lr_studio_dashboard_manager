@@ -22,6 +22,9 @@
     &Diagram {
         flex: 0.96;
 
+        @media (min-width: 1700px) {
+            flex: 0.97;
+        }
     }
 }
 
@@ -40,5 +43,8 @@
     &Empty {
         flex: 0.96;
 
+        @media (min-width: 1700px) {
+            flex: 0.97;
+        }
     }
 }

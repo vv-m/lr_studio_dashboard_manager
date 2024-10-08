@@ -87,19 +87,7 @@ const InfoBlock: FC<IInfoBlock> = memo(
                 />
               </div>
               {done > goal && (
-                <div
-                  className={s.doneIcon}
-                  style={
-                    {
-                      // position: 'absolute',
-                      // top: `${iconPosition.top + 2.5}px`,
-                      // left: `${iconPosition.left}px`,
-                      // transform: 'translate(-50%, -50%)',
-                      // background: '#FFFFFF',
-                      // borderRadius: '100px',
-                    }
-                  }
-                >
+                <div className={s.doneIcon}>
                   <Icons name="Done" />
                 </div>
               )}

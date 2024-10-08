@@ -16,6 +16,10 @@
     gap: 3.2rem;
     width: 100%;
     flex: 0.96;
+
+    @media (min-width: 1700px) {
+        flex: 0.97;
+    }
 }
 
 

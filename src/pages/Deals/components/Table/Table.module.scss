@@ -51,6 +51,7 @@
     border-radius: 0 0 1.2rem 1.2rem !important;
     max-height: 70.4rem;
     overflow: scroll;
+    overflow-x: hidden;
 
     &Item {
         display: flex;
