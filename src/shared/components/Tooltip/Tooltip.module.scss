@@ -8,7 +8,7 @@
     .text {
         position: absolute;
         padding: 0.8rem;
-        background-color: red;
+        background-color: $White-000;
         color: rgba(4, 47, 46, 1);
         font:500 #{$font-size-m-1}/#{$line-height-m-1} $font-family;
         border-radius: 0.4rem;
@@ -23,6 +23,8 @@
             position: absolute;
             border-style: solid;
         }
+
+
     }
 
     &:hover .text {
@@ -40,10 +42,15 @@
             top: 100%;
             left: 50%;
             border-width: 0.5rem 0.5rem 0 0.5rem;
-            border-color: red transparent transparent transparent;
+            border-color: $White-000 transparent transparent transparent;
             transform: translateX(-50%);
         }
+
+        &.backGrey::after {
+            border-color: blue transparent transparent transparent;
+        }
     }
+
 
     &.bottom .text {
         top: 100%;
@@ -55,8 +62,12 @@
             bottom: 100%;
             left: 50%;
             border-width: 0 0.5rem 0.5rem 0.5rem;
-            border-color: transparent transparent red transparent;
+            border-color: transparent transparent $White-000 transparent;
             transform: translateX(-50%);
+        }
+
+        &.backGrey::after {
+            border-color: transparent transparent blue transparent;
         }
     }
 
@@ -70,8 +81,12 @@
             right: -0.5rem;
             top: 50%;
             border-width: 0.5rem 0 0.5rem 0.5rem;
-            border-color: transparent transparent transparent red;
+            border-color: transparent transparent transparent $White-000;
             transform: translateY(-50%);
+        }
+
+        &.backGrey::after {
+            border-color: transparent transparent transparent blue;
         }
     }
 
@@ -85,8 +100,12 @@
             left: -0.5rem;
             top: 50%;
             border-width: 0.5rem 0.5rem 0.5rem 0;
-            border-color: transparent red transparent transparent;
+            border-color: transparent $White-000 transparent transparent;
             transform: translateY(-50%);
+        }
+
+        &.backGrey::after {
+            border-color: transparent blue transparent transparent;
         }
     }
 }

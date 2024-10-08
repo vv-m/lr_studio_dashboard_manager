@@ -8,7 +8,7 @@ export interface ITooltipProps {
   text?: string;
   isShown: boolean;
   placement?: 'top' | 'right' | 'bottom' | 'left';
-  isBackGrey?: boolean; // Новый проп
+  isBackGrey?: boolean;
 }
 
 const Tooltip: FC<ITooltipProps> = memo(
@@ -20,9 +20,11 @@ const Tooltip: FC<ITooltipProps> = memo(
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3, ease: 'easeOut' }}
-          className={cn(s.wrapper, s[placement], { [s.backGrey]: isBackGrey })}
+          className={cn(s.wrapper, s[placement])}
         >
-          {!!text && <div className={s.text}>{text}</div>}
+          {!!text && (
+            <div className={cn(s.text, { [s.backGrey]: isBackGrey })}>{text}</div>
+          )}
           <div>
             <Icons name="Info" />
           </div>
