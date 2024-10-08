@@ -11,6 +11,7 @@ import TableDeals from './components/TableDeals/TableDeals';
 import s from './Statistics.module.scss';
 import useStatistics from './hooks/useStatistics';
 import Conversion from 'shared/components/Conversion/Conversion';
+import Tooltip from 'shared/components/Tooltip/Tooltip';
 
 const Statistics = memo(() => {
   const {
@@ -56,11 +57,11 @@ const Statistics = memo(() => {
                   }
                   сurrency
                 />
-                <div className={s.prize}>
+                <div className={s.prize} style={{ position: 'relative' }}>
                   <div className={s.upperBlock}>
                     <div className={s.name}>
                       <span>Премия</span>
-                      <Icons name="Info" />
+                      <Tooltip isShown text="Информация о премии" />
                     </div>
                     <div
                       className={cn(

@@ -32,7 +32,10 @@ const Calls: FC = memo(() => {
           </div>
         </div>
         <div className={s.bottomContainer}>
-          <TableCalls periods={dataCalls?.periods} />
+          <div className={s.bottomContainerTable}>
+            <TableCalls periods={dataCalls?.periods} />
+          </div>
+          <div className={s.bottomContainerEmpty}></div>
         </div>
       </motion.div>
     </AnimatePresence>
