@@ -8,8 +8,8 @@
     .text {
         position: absolute;
         padding: 0.8rem 1.2rem;
-        background-color: $White-000;
-        color: rgba(4, 47, 46, 1);
+        background-color: #61646B;
+        color: $White-000;
         font:500 #{$font-size-m-1}/#{$line-height-m-1} $font-family;
         border-radius: 0.8rem;
         opacity: 0;
@@ -19,7 +19,8 @@
         z-index: 2;
 
         &.backGrey {
-            background-color: $Gray-200;
+            background-color: #61646B;
+            color: $White-000;
         }
 
         &::after {
@@ -46,12 +47,12 @@
             top: 100%;
             left: 50%;
             border-width: 0.5rem 0.5rem 0 0.5rem;
-            border-color: $White-000 transparent transparent transparent;
+            border-color: #61646B transparent transparent transparent;
             transform: translateX(-50%);
         }
 
         &.backGrey::after {
-            border-color: $Gray-200 transparent transparent transparent;
+            border-color: #61646B transparent transparent transparent;
         }
     }
 
@@ -66,12 +67,12 @@
             bottom: 100%;
             left: 50%;
             border-width: 0 0.5rem 0.5rem 0.5rem;
-            border-color: transparent transparent $White-000 transparent;
+            border-color: transparent transparent #61646B transparent;
             transform: translateX(-50%);
         }
 
         &.backGrey::after {
-            border-color: transparent transparent $Gray-200 transparent;
+            border-color: transparent transparent #61646B transparent;
         }
     }
 
@@ -85,12 +86,12 @@
             right: -0.5rem;
             top: 50%;
             border-width: 0.5rem 0 0.5rem 0.5rem;
-            border-color: transparent transparent transparent $White-000;
+            border-color: transparent transparent transparent #61646B;
             transform: translateY(-50%);
         }
 
         &.backGrey::after {
-            border-color: transparent transparent transparent $Gray-200;
+            border-color: transparent transparent transparent #61646B;
         }
     }
 
@@ -104,12 +105,12 @@
             left: -0.5rem;
             top: 50%;
             border-width: 0.5rem 0.5rem 0.5rem 0;
-            border-color: transparent $White-000 transparent transparent;
+            border-color: transparent #61646B transparent transparent;
             transform: translateY(-50%);
         }
 
         &.backGrey::after {
-            border-color: transparent $Gray-200 transparent transparent;
+            border-color: transparent #61646B transparent transparent;
         }
     }
 }
