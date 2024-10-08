@@ -44,6 +44,9 @@ const Statistics = memo(() => {
                   growth={dataManager?.compaired_parcent_qty_deals}
                   title="Cделки"
                   description="Кол-во успешных сделок"
+                  textTooltip="Какой то текст про сделки"
+                  placement="bottom"
+                  isBackGrey
                 />
                 <InfoBlock
                   done={dataManager?.sum_deals}
@@ -56,12 +59,19 @@ const Statistics = memo(() => {
                       : ''
                   }
                   сurrency
+                  textTooltip="Какой то текст про выручку"
+                  placement="bottom"
+                  isBackGrey
                 />
                 <div className={s.prize} style={{ position: 'relative' }}>
                   <div className={s.upperBlock}>
                     <div className={s.name}>
                       <span>Премия</span>
-                      <Tooltip isShown text="Информация о премии" />
+                      <Tooltip
+                        isShown
+                        placement="left"
+                        text="There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text."
+                      />
                     </div>
                     <div
                       className={cn(
@@ -103,6 +113,9 @@ const Statistics = memo(() => {
                   growth={dataDepartment?.compared_percent_qty_deals}
                   title="Cделки"
                   description="Кол-во успешных сделок"
+                  textTooltip="Какой то текст про сделки"
+                  placement="bottom"
+                  isBackGrey
                 />
                 <InfoBlock
                   done={dataDepartment?.sum_deals}
@@ -111,6 +124,9 @@ const Statistics = memo(() => {
                   title="Выручка"
                   description={'Сумма успешных сделок'}
                   сurrency
+                  textTooltip="Какой то текст про выручку"
+                  placement="bottom"
+                  isBackGrey
                 />
                 <InfoBlock
                   done={dataDepartment?.remainder_for_next_level}
@@ -123,6 +139,9 @@ const Statistics = memo(() => {
                   bonusLevel={dataDepartment.bonus_level}
                   percent={dataDepartment.current_percent_bonus_level}
                   nextPercent={dataDepartment.next_percent_bonus_level}
+                  textTooltip="Какой то текст про уровни"
+                  placement="bottom"
+                  isBackGrey
                 />
               </>
             )}

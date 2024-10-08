@@ -1,8 +1,9 @@
-import React, { FC, memo, useMemo, } from 'react';
+import React, { FC, memo, useMemo } from 'react';
 import Icons from 'shared/components/Icons/Icons';
 import cn from 'classnames';
 import s from './InfoBlock.module.scss';
 import car from 'static/images/car.png';
+import Tooltip from 'shared/components/Tooltip/Tooltip';
 
 interface IInfoBlock {
   done: number;
@@ -15,6 +16,9 @@ interface IInfoBlock {
   bonusLevel?: number;
   percent?: number;
   nextPercent?: number;
+  textTooltip: string;
+  placement: 'top' | 'right' | 'bottom' | 'left';
+  isBackGrey: boolean;
 }
 
 const InfoBlock: FC<IInfoBlock> = memo(
@@ -29,6 +33,9 @@ const InfoBlock: FC<IInfoBlock> = memo(
     bonusLevel,
     percent,
     nextPercent,
+    textTooltip,
+    placement,
+    isBackGrey,
   }) => {
     const progress = useMemo(() => (done / goal) * 100, [done, goal]);
 
@@ -41,7 +48,12 @@ const InfoBlock: FC<IInfoBlock> = memo(
             <span>{title}</span>
             {bonusLevel && <span>{bonusLevel}</span>}
             {levelNext && <span className={s.totalLevel}> / {levelNext}</span>}
-            <Icons name="Info" />
+            <Tooltip
+              isShown
+              text={textTooltip}
+              placement={placement}
+              isBackGrey={isBackGrey}
+            ></Tooltip>
           </div>
           {!levelNext && (
             <div className={cn(s.status, growth > 0 ? s.statusHeight : s.statusFall)}>

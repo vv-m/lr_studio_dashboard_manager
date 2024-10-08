@@ -13,10 +13,15 @@
         font:500 #{$font-size-m-1}/#{$line-height-m-1} $font-family;
         border-radius: 0.4rem;
         font-size: 1.4rem;
-        white-space: nowrap;
         opacity: 0;
         visibility: hidden;
         transition: opacity 0.3s ease, visibility 0.3s ease;
+        width: 31rem;
+        z-index: 2;
+
+        &.backGrey {
+            background-color: $Gray-200;
+        }
 
         &::after {
             content: '';
@@ -47,7 +52,7 @@
         }
 
         &.backGrey::after {
-            border-color: blue transparent transparent transparent;
+            border-color: $Gray-200 transparent transparent transparent;
         }
     }
 
@@ -67,7 +72,7 @@
         }
 
         &.backGrey::after {
-            border-color: transparent transparent blue transparent;
+            border-color: transparent transparent $Gray-200 transparent;
         }
     }
 
@@ -86,7 +91,7 @@
         }
 
         &.backGrey::after {
-            border-color: transparent transparent transparent blue;
+            border-color: transparent transparent transparent $Gray-200;
         }
     }
 
@@ -105,7 +110,7 @@
         }
 
         &.backGrey::after {
-            border-color: transparent blue transparent transparent;
+            border-color: transparent $Gray-200 transparent transparent;
         }
     }
 }

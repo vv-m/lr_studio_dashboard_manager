@@ -25,7 +25,7 @@ const Tooltip: FC<ITooltipProps> = memo(
           {!!text && (
             <div className={cn(s.text, { [s.backGrey]: isBackGrey })}>{text}</div>
           )}
-          <div>
+          <div className={s.icon}>
             <Icons name="Info" />
           </div>
         </motion.div>
