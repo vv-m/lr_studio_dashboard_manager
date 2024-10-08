@@ -51,7 +51,7 @@ const Messengers: FC<IMessengers> = memo(({ dataDialogues }) => {
               <Tooltip
                 isShown
                 isBackGrey
-                placement="right"
+                placement="top"
                 text="Информация о сообщения без ответа"
               />
             </div>
