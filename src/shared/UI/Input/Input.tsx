@@ -1,5 +1,5 @@
 import React, { FC, memo, useCallback, useEffect, useState } from 'react';
-import { v4 as uuidv4 } from 'uuid';
+import InputMask from 'react-input-mask';
 import s from './Input.module.scss';
 
 interface IInput {
@@ -8,21 +8,23 @@ interface IInput {
   label?: string;
   typeValue?: string;
   idInput?: string;
+  mask?: string;
 }
 
-const uniqueId = uuidv4();
-
-const Input: FC<IInput> = memo(({ label, typeValue, onChange, value, idInput }) => {
+const Input: FC<IInput> = memo(({ label, typeValue, onChange, value, idInput, mask }) => {
   const [, setInputText] = useState('');
 
   useEffect(() => {
     setInputText(value ? String(value).trim() : '');
   }, [value]);
 
-  const hadlerChangeInputText = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    setInputText(e.target.value);
-    onChange(e);
-  }, []);
+  const hadlerChangeInputText = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      setInputText(e.target.value);
+      onChange(e);
+    },
+    [onChange],
+  );
 
   const handleKeyDown = useCallback((e: React.KeyboardEvent<HTMLInputElement>) => {
     const allowedKeys = [
@@ -53,17 +55,15 @@ const Input: FC<IInput> = memo(({ label, typeValue, onChange, value, idInput }) 
   return (
     <div className={s.main}>
       {label && <label className={s.label}>{label}</label>}
-      <input
+      <InputMask
         className={s.input}
-        type="number"
-        id={idInput || uniqueId}
-        name="length"
-        min="0"
-        placeholder="0"
+        mask={mask || ''}
+        id={idInput}
         value={value}
         onChange={hadlerChangeInputText}
         onKeyDown={handleKeyDown}
-      ></input>
+        placeholder="дд.мм.гггг"
+      />
       {typeValue && <span className={s.typeValue}>{typeValue}</span>}
     </div>
   );

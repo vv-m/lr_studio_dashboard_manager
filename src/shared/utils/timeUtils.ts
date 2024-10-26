@@ -62,4 +62,28 @@ export const getShortMonthName = (month: string) => {
   return monthMap[month] || month;
 };
 
+export function formatDateToDayMonth(dateString: string, withYear?: boolean) {
+  const months = [
+    'янв',
+    'фев',
+    'мар',
+    'апр',
+    'май',
+    'июн',
+    'июл',
+    'авг',
+    'сен',
+    'окт',
+    'ноя',
+    'дек',
+  ];
+
+  const date = new Date(dateString);
+  const day = date.getDate();
+  const month = months[date.getMonth()];
+  const year = date.getFullYear();
+
+  return withYear ? `${day} ${month} ${year}` : `${day} ${month}`;
+}
+
 export default getCurrentYearAndMonth;
