@@ -26,7 +26,7 @@ export interface IScheduleManager {
   }[];
 }
 
-export interface IGetEmployees {
+export interface IResGetEmployees {
   employees: IScheduleManager[];
 }
 
@@ -67,7 +67,7 @@ const useInfoVacationHttpController = () => {
     }
   }, []);
 
-  const getEmployees = useCallback((): IGetEmployees | null => {
+  const getEmployees = useCallback((currentDate: string): IResGetEmployees | null => {
     try {
       // Пример запроса
       // const token = localStorage.getItem('token');
@@ -75,7 +75,11 @@ const useInfoVacationHttpController = () => {
       // const { data } = await axios.get('/api/v1/shendule/employees?date', {
       //   headers: { Authorization: `Bearer ${token}` },
       // });
-      return mockSchedule;
+      if (currentDate === '10') {
+        return mockSchedule;
+      } else {
+        return null;
+      }
     } catch (error) {
       console.error(error);
       return null;

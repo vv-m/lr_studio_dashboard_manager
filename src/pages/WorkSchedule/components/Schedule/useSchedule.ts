@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import useInfoVacationHttpController, {
   IScheduleManager,
 } from 'shared/http/useInfoVacationHttpController';
+import { formatDateToMMDDYYYY } from 'shared/utils/timeUtils';
 
 const monthShortNames = [
   'Янв',
@@ -50,14 +51,14 @@ const useSchedule = () => {
 
   useEffect(() => {
     (async () => {
-      const data = await getEmployees();
+      const data = await getEmployees(formatDateToMMDDYYYY(currentDate));
       if (data) {
         setSchedule(data.employees);
       } else {
         setSchedule(null);
       }
     })();
-  }, []);
+  }, [currentDate]);
 
   return { handlePrevMonth, month, year, schedule, handleNextMonth };
 };
