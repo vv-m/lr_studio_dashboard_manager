@@ -2,7 +2,7 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
-  // base: '/lr_studio_dashboard_manager/',
+  base: '/lr_studio_dashboard_manager/',
   plugins: [react()],
   resolve: {
     alias: {
