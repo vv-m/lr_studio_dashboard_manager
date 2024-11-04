@@ -7,7 +7,7 @@ import store from 'store/index';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <Provider store={store}>
-    <BrowserRouter>
+    <BrowserRouter basename="/lr_studio_dashboard_manager">
       <App />
     </BrowserRouter>
   </Provider>
