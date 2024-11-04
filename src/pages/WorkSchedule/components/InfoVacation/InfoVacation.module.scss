@@ -1,0 +1,40 @@
+@use 'src/styles/colors.scss'as *;
+@use 'src/styles/variables.scss'as *;
+
+.main {
+    display: flex;
+    flex-direction: row;
+    gap: 3.2rem;
+
+    &>div {
+        flex: 1;
+    }
+}
+
+.wrapperBlock {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    background-color: $White-000;
+    border-radius: 1.2rem;
+}
+
+.title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.8rem;
+    font : 600 #{$font-size-m-1}/#{$line-height-m-1} $font-family;
+    color: $Gray-950;
+}
+
+.date {
+    font : 600 #{$font-size-l-1}/#{$line-height-l-1} $font-family;
+    color: $Gray-950;
+    margin: 2rem 0 0.8rem 0;
+}
+
+.duration {
+    font : 400 #{$font-size-m-1}/#{$line-height-m-1} $font-family;
+    color: $Gray-500;
+}

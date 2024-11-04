@@ -1,0 +1,40 @@
+@use 'src/styles/colors.scss'as *;
+@use 'src/styles/variables.scss'as *;
+
+.main {
+    display: flex;
+    flex-direction: row;
+    padding: 2rem;
+    background-color: $White-000;
+    border-radius: 1.2rem;
+    justify-content: space-between;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+
+    &Main {
+        font : 600 #{$font-size-m-1}/#{$line-height-m-1} $font-family;
+        color: $Gray-950;
+    }
+
+    &Secondary {
+        font : 400 #{$font-size-m-1}/#{$line-height-m-1} $font-family;
+        color: $Gray-500;
+    }
+}
+
+.button {
+    border: none;
+    border-radius: 1.2rem;
+    background-color: $Malachite-500;
+    padding: 0.8rem 1.6rem;
+    font : 700 #{$font-size-m-1}/#{$line-height-m-1} $font-family;
+    color: $White-000;
+    cursor: pointer;
+
+    &:active {
+        background-color: $Malachite-600;
+    }
+}

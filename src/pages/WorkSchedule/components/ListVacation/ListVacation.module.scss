@@ -1,0 +1,61 @@
+@use 'src/styles/colors.scss'as *;
+@use 'src/styles/variables.scss'as *;
+
+.main {
+    display: flex;
+    flex-direction: column;
+    background-color: $White-000;
+    border-radius: 1.2rem;
+}
+
+.header {
+    padding: 2rem;
+    font: 600 #{$font-size-m-1}/#{$line-height-m-1} $font-family;
+    border-bottom: 0.1rem solid rgba(237, 238, 241, 1)
+}
+
+.headerTable {
+    display: flex;
+    flex-direction: row;
+    padding: 2rem;
+    gap: 2rem;
+    font : 400 #{$font-size-m-1}/#{$line-height-m-1} $font-family;
+    color: $Gray-500;
+    justify-content: space-between;
+}
+
+.type {
+    min-width: 23.3rem;
+    text-align: start;
+}
+
+.dateApplication {
+    min-width: 14rem;
+}
+
+.date {
+    min-width: 23.3rem;
+}
+
+.period {
+    min-width: 14rem;
+}
+
+.status {
+    min-width: 16rem;
+    text-align: center;
+}
+
+.active {
+    min-width: 8rem;
+    text-align: end;
+}
+
+.noVacation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    font : 400 #{$font-size-m-1}/#{$line-height-m-1} $font-family;
+    color: $Gray-950;
+}
