@@ -136,21 +136,33 @@ const ModalsCreateVacation = memo(() => {
           </AnimatePresence>
         )}
         <div className={s.inputs}>
-          <Input
-            onChange={handlerChangeFromDate}
-            value={dataForm.start_date}
-            label={dataForm.vacation_type === 'Отгул' ? 'Дата' : 'Дата начала'}
-            idInput="Дата начала"
-            mask="99.99.9999"
-          />
-          {dataForm.vacation_type !== 'Отгул' && (
+          <div className={s.wrapperInput}>
             <Input
-              onChange={handlerChangeToDate}
-              value={dataForm.end_date}
-              label="Дата завершения"
-              idInput="Дата завершения"
+              onChange={handlerChangeFromDate}
+              value={dataForm.start_date}
+              label={dataForm.vacation_type === 'Отгул' ? 'Дата' : 'Дата начала'}
+              idInput="Дата начала"
               mask="99.99.9999"
             />
+            <div className={s.iconInsideInput}>
+              <Icons name="RabGrafik" color="#8E95A2" />
+            </div>
+          </div>
+          {dataForm.vacation_type !== 'Отгул' && (
+            <div className={s.inputs}>
+              <div className={s.wrapperInput}>
+                <Input
+                  onChange={handlerChangeToDate}
+                  value={dataForm.end_date}
+                  label="Дата завершения"
+                  idInput="Дата завершения"
+                  mask="99.99.9999"
+                />
+                <div className={s.iconInsideInput}>
+                  <Icons name="RabGrafik" color="#8E95A2"></Icons>
+                </div>
+              </div>
+            </div>
           )}
         </div>
         <div className={s.notification}>

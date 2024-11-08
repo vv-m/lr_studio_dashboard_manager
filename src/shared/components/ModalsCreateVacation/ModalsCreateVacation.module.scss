@@ -114,3 +114,16 @@
         background-color: $Gray-100;
     }
 }
+
+.wrapperInput {
+    position: relative;
+}
+
+.iconInsideInput {
+    position: absolute;
+    top: 5.3rem;
+    right: 1.2rem;
+    transform: translateY(-50%);
+    pointer-events: none;
+
+}

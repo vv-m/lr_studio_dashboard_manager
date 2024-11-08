@@ -27,19 +27,28 @@ const WrapperModal: FC<IWrapperModal> = memo(({ children, onClose }) => {
   return createPortal(
     <AnimatePresence>
       <motion.div
-        transition={{ duration: 0.2, delay: 0.1, ease: 'easeInOut' }}
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        exit={{
-          opacity: 0,
-          scale: 0.8,
-          transition: {
-            duration: 0.2,
-          },
-        }}
-        className={s.main}
+        className={s.wrapper}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.2 }}
       >
-        {children}
+        <div className={s.background} onClick={onClose} />
+        <motion.div
+          className={s.content}
+          transition={{ duration: 0.2, delay: 0.1, ease: 'easeInOut' }}
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{
+            opacity: 0,
+            scale: 0.8,
+            transition: {
+              duration: 0.2,
+            },
+          }}
+        >
+          {children}
+        </motion.div>
       </motion.div>
     </AnimatePresence>,
     MODAL_ROOT,

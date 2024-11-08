@@ -9,6 +9,7 @@
     font : 400 #{$font-size-m-1}/#{$line-height-m-1} $font-family;
     color: $Gray-950;
     justify-content: space-between;
+    position: relative;
 
     &Gray {
         background-color: $Gray-050;
@@ -42,10 +43,36 @@
 .active {
     min-width: 8rem;
     text-align: end;
+    display: flex;
+    align-items: center;
+    justify-content: end;
 
     >svg {
         cursor: pointer;
     }
+}
+
+.wrapperIcon {
+    display: flex;
+    cursor: pointer;
+    height: 1.6rem;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    border-radius: 0.4rem;
+
+    &:hover {
+        background-color: $Gray-200;
+    }
+
+
+    &:active {
+        background-color: $Gray-300;
+    }
+}
+
+.open {
+    background-color: $Gray-200;
 }
 
 .status {
@@ -119,4 +146,11 @@
             }
         }
     }
+}
+
+.activePanel {
+    position: absolute;
+    right: 4.6rem;
+    top: 2.8rem;
+    z-index: 1000;
 }
