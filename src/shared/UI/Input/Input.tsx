@@ -62,7 +62,7 @@ const Input: FC<IInput> = memo(({ label, typeValue, onChange, value, idInput, ma
         value={value}
         onChange={hadlerChangeInputText}
         onKeyDown={handleKeyDown}
-        placeholder="дд.мм.гггг"
+        placeholder={mask && 'дд.мм.гггг'}
       />
       {typeValue && <span className={s.typeValue}>{typeValue}</span>}
     </div>
